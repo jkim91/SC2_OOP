@@ -2,23 +2,27 @@
 #include "Meter.h"
 #include "Armor.h"
 
-Shield:: Shield(){
+Shield::Shield(){
 	meter = new Meter();
-	armor = NULL;
+	armor = new Armor();
+	useDefault = true;
 }
 
-Shield::Shield(int max, Armor &armor){
+Shield::Shield(int &max, Armor &armor){
 	meter = new Meter(max);
 	this->armor = &armor;
+	useDefault = false;
 }
 
 Shield::Shield(Shield &h){
 	meter = new Meter(*(h.getMeter()));
 	armor = h.getArmor();
+	useDefault = false;
 }
 
 Shield::~Shield(){
 	delete meter;
+	if(useDefault) delete armor;
 }
 
 void Shield::regen(){

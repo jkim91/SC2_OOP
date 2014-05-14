@@ -13,19 +13,20 @@ class Meter{
 protected:
 	int *current; //current value pointer (UNIQUE)
 	int *max; //max value pointer(SHARED)
+	bool useDefault; //check if the object was created using the default constructor
 public:
-	Meter(); //default constructor
-	Meter(int max); //primitive constructor, creates both current and max int objects
+	Meter(); //default constructor, creates a new int for max
+	Meter(int &max); //primitive constructor, creates new current from the reference, but max references the parameter
 	Meter(Meter &m); //copy constructor, creates current, but references the max of the copy
-	~Meter(); //destructor
+	~Meter(); //destructor, deletes only the current, but deletes everything if it used default
 
 	int* getCurrentPointer(); //getter for current pointer, for modification
 	int getCurrentValue(); //getter for current value, for GUI/debugging
-	void setCurrent(int val); //setter for current, does not create new int.
+	void setCurrent(int val); //setter for current, does not create a new int.
 
 	int* getMaxPointer(); //getter for max pointer, for modification
 	int getMaxValue(); //getter for max value, for GUI/debugging
-	void setMax(int val); //set the max to new value
+	void setMax(int val); //set the max to a new value
 	void linkMax(int &val); //link to an int from the parameter
 	bool isFull(); //check if max is equal to current
 

@@ -23,7 +23,6 @@ int Armor::getVal(){
 	return val;
 }
 
-
 void Armor::setVal(int val){
 	this->val = val;
 }

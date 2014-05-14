@@ -16,12 +16,13 @@ class Health
 protected:
 	Meter *meter; //health meter (UNIQUE)
 	Armor *armor; //armor associated with health (SHARED)
+	bool useDefault; //check if the object was created using the default constructor
 public:
-	Health(); //default constructor
-	Health(int max, Armor &armor); //primitive constructor, create new meter, shallow-copy armor
+	Health();
+	Health(int &max, Armor &armor); //primitive constructor, create new meter, shallow-copy armor
 	Health(Meter &m, Armor &a); //primitive constructor, same impl. as last one
 	Health(Health &h); //copy constructor, deep-copy meter, shallow-copy armor
-	~Health();
+	~Health(); //deletes only the meter, but deletes everything if default was used
 
 	int getCurrent(); //getter for current
 	void addHealth(int amount); //add to health

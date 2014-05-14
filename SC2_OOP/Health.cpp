@@ -3,27 +3,32 @@
 #include "Meter.h"
 
 Health::Health(){
-	meter = NULL;
-	armor = NULL;
+	meter = new Meter();
+	armor = new Armor();
+	useDefault = true;
 }
 
-Health::Health(int max, Armor &a){
+Health::Health(int &max, Armor &a){
 	meter = new Meter(max);
 	armor = &a;
+	useDefault = false;
 }
 
 Health::Health(Meter &m, Armor &a){
 	meter = new Meter(m);
 	armor = &a;
+	useDefault = false;
 }
 
 Health::Health(Health &h){
 	meter = new Meter(*(h.getMeter()));
 	armor = h.getArmor();
+	useDefault = false;
 }
 
 Health::~Health(){
-	if(meter != NULL) delete meter;
+	delete meter;
+	if(useDefault) delete armor;
 }
 
 int Health::getCurrent(){

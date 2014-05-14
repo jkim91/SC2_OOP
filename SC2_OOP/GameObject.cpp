@@ -1,6 +1,7 @@
 #include "GameObject.h"
 #include "Health.h"
 #include "Armor.h"
+#include "Meter.h"
 
 const string GameObject::LIGHT = "Light";
 const string GameObject::ARMORED = "Armored";
@@ -12,19 +13,41 @@ const string GameObject::PSIONIC = "Psionic";
 const string GameObject::STRUCTURE = "Structure";
 
 GameObject::GameObject(){
-	name = NULL;
-	groundStatus = new int(GameObject::GROUND);
-	sightRadius = new int(1);
-	armor = new Armor(1);
-	health = new Health(1, *armor);
-	attributes = NULL;
+	init();
 }
 
 GameObject::~GameObject(){
-	if(health != NULL) delete health;
-	if(sightRadius != NULL) delete sightRadius;
-	if(groundStatus != NULL) delete groundStatus;
-	if(armor != NULL) delete armor;
+	destroy();
+}
+
+void GameObject::init(){
+	name = new string;
+	groundStatus = new int;
+	sightRadius = new int;
+	health = new Health(*(new Meter()), *(new Armor()));
+	attributes = new set<string>();
+	player = NULL;
+	useDefault = true;
+	initDetails();
+}
+
+void GameObject::initDetails(){
+	return;
+}
+
+void GameObject::destroy(){
+	delete groundStatus;
+	delete sightRadius;
+	delete health;
+	if(useDefault){
+		delete name;
+		delete attributes;
+	}
+	destroyDetails();
+}
+
+void GameObject::destroyDetails(){
+	return;
 }
 
 string GameObject::getName(){
@@ -43,8 +66,8 @@ int GameObject::getSightRadius(){
 	return *sightRadius;
 }
 
-void GameObject::setSightRadius(int &sightRadius){
-	this->sightRadius = new int(sightRadius);
+void GameObject::setSightRadius(int sightRadius){
+	*(this->sightRadius) = sightRadius;
 }
 
 Health* GameObject::getHealth(){
@@ -60,6 +83,7 @@ void GameObject::subHealth(int amount){
 }
 
 void GameObject::setHealth(Health &h){
+	delete health;
 	health = new Health(h);
 }
 

@@ -4,7 +4,7 @@
 
 /*
 Explanation:
-	GameObject is any object in the game. All objects have a name, groundStatus, sight, health, attributes,transform and the players that owns the object. GameObject should be subclassed to determine what type of object it is.
+	GameObject is any object in the game. All objects have a name, groundStatus, sight, health, attributes,transform and the players that owns the object. GameObject should be subclassed to determine what type of object it is. It should not be created
 	Name: will not change once set, so shared.
 	groundStatus: will not change for most units, but it can happen, so unique.
 	sightRadius: can be affected by spell, so unique
@@ -29,16 +29,22 @@ class Player;
 class GameObject{
 private:
 protected:
+	void init(); //default constructor method (Template Method)
+	virtual void initDetails(); //details to be filled in for init()
+
+	void destroy(); //destructor method (Template Method)
+	virtual void destroyDetails(); //details to be filled in for destroy()
+
 	string *name; //name of the object, usually the class name (SHARED)
 	int *groundStatus; //status for on the ground or air (UNIQUE)
 	int *sightRadius; //sight radius for what the object can "see" (UNIQUE)
 	Health *health; //health (UNIQUE)
-	Armor *armor; //armor, but only for testing. subclasses will reference armor inside health
 	set<string> *attributes; //set of string attributes (SHARED)
 	Player *player; //player that owns this gameobject (SHARED)
+	bool useDefault; //check if the object was created with the default constructor
 public:
 	GameObject();
-	~GameObject();
+	virtual ~GameObject();
 	
 	//getter and setter for name of gameobject
 	string getName(); //getter for name
@@ -47,23 +53,21 @@ public:
 	int getGroundStatus(); //getter for status. setter done in subclass constructors.
 
 	int getSightRadius(); //getter for sight radius
-	void setSightRadius(int &sightRadius); //set the radius
+	void setSightRadius(int sightRadius); //set the radius to a new value
 
-	Health *getHealth(); //getter for health pointer
+	Health* getHealth(); //getter for health pointer
 	virtual void addHealth(int amount); //add to the object's current health
 	virtual void subHealth(int amount); //subtract from the object's current health
 	void setHealth(Health &h); //setter for health
 
-	Armor *getArmor(); //getter for armor pointer
+	Armor* getArmor(); //getter for armor pointer
 	void setArmor(Armor &a); //setter for armor
 
-	set<string> *getAttributes(); //getter for all attributes
+	set<string>* getAttributes(); //getter for all attributes
 	void setAttributes(set<string> &s); //setter for attributes
 
-	Player *getPlayer(); //getter for player
+	Player* getPlayer(); //getter for player
 	void linkToPlayer(Player &owner); //link to a player
-
-	virtual void stop(); //stop the object
 
 	Transform *transform; //object's transform (UNIQUE)
 

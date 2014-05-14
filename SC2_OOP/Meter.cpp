@@ -2,21 +2,26 @@
 #define NULL 0
 
 Meter::Meter(){
-	max = NULL;
-	current = NULL;
+	current = new int(1);
+	max = new int(1);
+	useDefault = true;
 }
 
-Meter::Meter(int max){
+Meter::Meter(int &max){
+	this->max = &max;
 	current = new int(max);
+	useDefault = false;
 }
 
 Meter::Meter(Meter &m){
 	this->current = new int(*m.current);
 	this->max = m.max;
+	useDefault = false;
 }
 
 Meter::~Meter(){
 	delete current;
+	if(useDefault) delete max;
 }
 
 int* Meter::getCurrentPointer(){

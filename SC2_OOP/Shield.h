@@ -5,14 +5,14 @@
 #include "Health.h"
 
 /*
-Explanation: Shield is a subclass of Health, except that it regenerates.
+Explanation: Shield is a subclass of Health and it actually regenerates
 */
 
 class Shield : public Health{
 protected:
 public:
-	Shield();
-	Shield(int max, Armor &a); //primitive constructor
+	Shield(); //default constructor
+	Shield(int &max, Armor &a); //primitive constructor
 	Shield(Meter &m, Armor &a); //primitive constructor
 	Shield(Shield &s); //copy constructor
 	~Shield();
