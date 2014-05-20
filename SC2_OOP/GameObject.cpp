@@ -3,15 +3,6 @@
 #include "Armor.h"
 #include "Meter.h"
 
-const string GameObject::LIGHT = "Light";
-const string GameObject::ARMORED = "Armored";
-const string GameObject::BIO = "Biological";
-const string GameObject::MECH = "Mechanical";
-const string GameObject::DETECTOR = "Detector";
-const string GameObject::MASSIVE = "Massive";
-const string GameObject::PSIONIC = "Psionic";
-const string GameObject::STRUCTURE = "Structure";
-
 GameObject::GameObject(){
 	init();
 }

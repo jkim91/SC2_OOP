@@ -21,7 +21,7 @@ protected:
 
 	Meter *amount; //amount of resource it currently has. (UNIQUE)
 public:
-	Resource(); //default constructor
+	Resource(); //default constructor, only for testing
 	Resource(string &type, Armor &a); //primitive constructor, set the type of resource and set the armor
 	virtual ~Resource(); //destructor. destroys the meter, but type is not deleted.
 
@@ -33,8 +33,6 @@ public:
 	virtual void subtractFromAmount(Worker &w) = 0; //subtract from the current amount
 
 	static const int STANDARD = 2500;
-	static const string MINERAL;
-	static const string GAS;
 };
 
 #endif
