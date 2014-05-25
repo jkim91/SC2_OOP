@@ -30,15 +30,16 @@ class GameObject{
 private:
 protected:
 	void init(); //default constructor method (Template Method)
-	virtual void initDetails(); //details to be filled in for init()
+	virtual void initDetails(); //additonal details to be filled in for init()
 
 	void destroy(); //destructor method (Template Method)
-	virtual void destroyDetails(); //details to be filled in for destroy()
+	virtual void destroyDetails(); //additional details to be filled in for destroy()
 
 	string *name; //name of the object, usually the class name (SHARED)
 	int *groundStatus; //status for on the ground or air (UNIQUE)
 	int *sightRadius; //sight radius for what the object can "see" (UNIQUE)
 	Health *health; //health (UNIQUE)
+	Armor *armor; //armor (SHARED)
 	set<string> *attributes; //set of string attributes (SHARED)
 	Player *player; //player that owns this gameobject (SHARED)
 	bool useDefault; //check if the object was created with the default constructor

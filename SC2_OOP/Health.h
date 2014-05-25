@@ -2,7 +2,6 @@
 #ifndef _HEALTH_H
 #define _HEALTH_H
 
-class Armor;
 class Meter;
 
 /*
@@ -11,32 +10,14 @@ Explanation:
 
 */
 
-class Health
+class Health : public Meter
 {
-protected:
-	Meter *meter; //health meter (UNIQUE)
-	Armor *armor; //armor associated with health (SHARED)
-	bool useDefault; //check if the object was created using the default constructor
 public:
 	Health();
-	Health(int &max, Armor &armor); //primitive constructor, create new meter, shallow-copy armor
-	Health(Meter &m, Armor &a); //primitive constructor, same impl. as last one
+	Health(int &max); //primitive constructor, create new meter, shallow-copy armor
 	Health(Health &h); //copy constructor, deep-copy meter, shallow-copy armor
-	~Health(); //deletes only the meter, but deletes everything if default was used
 
-	int getCurrent(); //getter for current
-	void addHealth(int amount); //add to health
-	void subHealth(int amount); //subtract from health
-	int getMax(); //getter for max
-	void resetHealthToMax(); //reset current to max
-
-	Meter *getMeter(); //getter for meter
-	void setMeter(Meter &m); //setter for health meter, deep copy
-
-	Armor *getArmor(); //getter for armor
-	void setArmor(Armor &a); //setter for armor, shallow copy
-
-	virtual void regen(); //regenerate health
+	virtual void regen(); //regenerate health, default does nothing, so subclass for function
 };
 
 #endif

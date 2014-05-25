@@ -18,17 +18,19 @@ public:
 	Meter(); //default constructor, creates a new int for max
 	Meter(int &max); //primitive constructor, creates new current from the reference, but max references the parameter
 	Meter(Meter &m); //copy constructor, creates current, but references the max of the copy
-	~Meter(); //destructor, deletes only the current, but deletes everything if it used default
+	virtual ~Meter(); //destructor, deletes only the current, but deletes everything if it used default
 
-	int* getCurrentPointer(); //getter for current pointer, for modification
 	int getCurrentValue(); //getter for current value, for GUI/debugging
 	void setCurrent(int val); //setter for current, does not create a new int.
+	void setCurrentToMax(); //set the current to max value
+	void add(int amount); //add to current amount
+	void subtract(int amount); //subtract from current amount
 
-	int* getMaxPointer(); //getter for max pointer, for modification
 	int getMaxValue(); //getter for max value, for GUI/debugging
 	void setMax(int val); //set the max to a new value
 	void linkMax(int &val); //link to an int from the parameter
-	bool isFull(); //check if max is equal to current
+	
+	bool isFull(); //check if max is greater than or equal to current
 
 };
 

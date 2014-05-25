@@ -22,7 +22,7 @@ protected:
 	Meter *amount; //amount of resource it currently has. (UNIQUE)
 public:
 	Resource(); //default constructor, only for testing
-	Resource(string &type, Armor &a); //primitive constructor, set the type of resource and set the armor
+	Resource(string &type); //primitive constructor, set the type of resource and set the armor
 	virtual ~Resource(); //destructor. destroys the meter, but type is not deleted.
 
 	int getMaxAmount(); //getter for max

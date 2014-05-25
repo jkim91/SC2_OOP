@@ -15,7 +15,8 @@ void GameObject::init(){
 	name = new string;
 	groundStatus = new int;
 	sightRadius = new int;
-	health = new Health(*(new Meter()), *(new Armor()));
+	health = new Health();
+	armor = new Armor();
 	attributes = new set<string>();
 	player = NULL;
 	useDefault = true;
@@ -33,6 +34,7 @@ void GameObject::destroy(){
 	if(useDefault){
 		delete name;
 		delete attributes;
+		delete armor;
 	}
 	destroyDetails();
 }
@@ -66,11 +68,11 @@ Health* GameObject::getHealth(){
 }
 
 void GameObject::addHealth(int amount){
-	health->addHealth(amount);
+	health->add(amount);
 }
 
 void GameObject::subHealth(int amount){
-	health->subHealth(amount);
+	health->subtract(amount);
 }
 
 void GameObject::setHealth(Health &h){
@@ -79,11 +81,11 @@ void GameObject::setHealth(Health &h){
 }
 
 Armor* GameObject::getArmor(){
-	return health->getArmor();
+	return armor;
 }
 
 void GameObject::setArmor(Armor &a){
-	health->setArmor(a);
+	armor = &a;
 }
 
 set<string>* GameObject::getAttributes(){

@@ -3,15 +3,24 @@
 #include "Armor.h"
 #include "Meter.h"
 
+void Resource::initDetails(){
+	amount = new Meter();
+}
+
+void Resource::destroyDetails(){
+	delete amount;
+}
+
 Resource::Resource(){
 	init();
 }
 
-Resource::Resource(string &type, Armor &a){
+Resource::Resource(string &type){
 	name = &type;
 	groundStatus = new int(GROUND);
 	sightRadius = new int(1);
-	health = new Health(*(new int(1)), a);
+	health = new Health();
+	armor = new Armor();
 	attributes = NULL;
 	player = NULL;
 	useDefault = false;
@@ -19,14 +28,6 @@ Resource::Resource(string &type, Armor &a){
 
 Resource::~Resource(){
 	destroy();
-}
-
-void Resource::initDetails(){
-	amount = new Meter();
-}
-
-void Resource::destroyDetails(){
-	delete amount;
 }
 
 int Resource::getMaxAmount(){

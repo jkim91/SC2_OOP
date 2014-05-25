@@ -3,29 +3,24 @@
 #include "Armor.h"
 
 Shield::Shield(){
-	meter = new Meter();
-	armor = new Armor();
+	current = new int(1);
+	max = new int(1);
 	useDefault = true;
 }
 
-Shield::Shield(int &max, Armor &armor){
-	meter = new Meter(max);
-	this->armor = &armor;
+Shield::Shield(int &max){
+	this->max = &max;
+	current = new int(max);
 	useDefault = false;
 }
 
-Shield::Shield(Shield &h){
-	meter = new Meter(*(h.getMeter()));
-	armor = h.getArmor();
+Shield::Shield(Shield &s){
+	this->current = new int(*s.current);
+	this->max = s.max;
 	useDefault = false;
-}
-
-Shield::~Shield(){
-	delete meter;
-	if(useDefault) delete armor;
 }
 
 void Shield::regen(){
-	if(meter->isFull()) return;
-	*(meter->getCurrentPointer()) += 1;
+	if(isFull()) return;
+	add(1);
 }

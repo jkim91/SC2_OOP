@@ -24,10 +24,6 @@ Meter::~Meter(){
 	if(useDefault) delete max;
 }
 
-int* Meter::getCurrentPointer(){
-	return current;
-}
-
 int Meter::getCurrentValue(){
 	return *current;
 }
@@ -36,8 +32,16 @@ void Meter::setCurrent(int val){
 	*(this->current) = val;
 }
 
-int* Meter::getMaxPointer(){
-	return max;
+void Meter::setCurrentToMax(){
+	*current = *max;
+}
+
+void Meter::add(int amount){
+	*current += amount;
+}
+
+void Meter::subtract(int amount){
+	*current -= amount;
 }
 
 int Meter::getMaxValue(){
@@ -53,5 +57,5 @@ void Meter::linkMax(int &val){
 }
 
 bool Meter::isFull(){
-	return (*current == *max);
+	return (*current >= *max);
 }
