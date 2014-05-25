@@ -1,6 +1,4 @@
 #include "Shield.h"
-#include "Meter.h"
-#include "Armor.h"
 
 Shield::Shield(){
 	current = new int(1);
@@ -18,6 +16,9 @@ Shield::Shield(Shield &s){
 	this->current = new int(*s.current);
 	this->max = s.max;
 	useDefault = false;
+}
+
+Shield::~Shield(){
 }
 
 void Shield::regen(){

@@ -1,6 +1,4 @@
 #include "Health.h"
-#include "Armor.h"
-#include "Meter.h"
 
 Health::Health(){
 	current = new int(1);
@@ -18,6 +16,9 @@ Health::Health(Health &h){
 	this->current = new int(*h.current);
 	this->max = h.max;
 	useDefault = false;
+}
+
+Health::~Health(){
 }
 
 void Health::regen(){

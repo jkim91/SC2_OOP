@@ -11,23 +11,16 @@ void Resource::destroyDetails(){
 	delete amount;
 }
 
-Resource::Resource(){
-	init();
-}
-
-Resource::Resource(string &type){
-	name = &type;
-	groundStatus = new int(GROUND);
-	sightRadius = new int(1);
-	health = new Health();
-	armor = new Armor();
-	attributes = NULL;
-	player = NULL;
-	useDefault = false;
-}
-
 Resource::~Resource(){
 	destroy();
+}
+
+int Resource::getCurrentAmount(){
+	return amount->getCurrentValue();
+}
+
+void Resource::subtract(int request){
+	amount->subtract(request);
 }
 
 int Resource::getMaxAmount(){
@@ -36,9 +29,5 @@ int Resource::getMaxAmount(){
 
 void Resource::setMaxAmount(int &res){
 	amount->setMax(res);
-}
-
-int Resource::getCurrentAmount(){
-	return amount->getCurrentValue();
 }
 

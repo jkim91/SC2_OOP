@@ -2,7 +2,7 @@
 #ifndef _HEALTH_H
 #define _HEALTH_H
 
-class Meter;
+#include "Meter.h"
 
 /*
 Explanation:
@@ -16,6 +16,7 @@ public:
 	Health();
 	Health(int &max); //primitive constructor, create new meter, shallow-copy armor
 	Health(Health &h); //copy constructor, deep-copy meter, shallow-copy armor
+	~Health(); //destructor
 
 	virtual void regen(); //regenerate health, default does nothing, so subclass for function
 };

@@ -14,6 +14,7 @@ public:
 	Shield(); //default constructor
 	Shield(int &max); //primitive constructor
 	Shield(Shield &s); //copy constructor
+	~Shield(); //destructor
 
 	void regen();
 };

@@ -21,16 +21,15 @@ protected:
 
 	Meter *amount; //amount of resource it currently has. (UNIQUE)
 public:
-	Resource(); //default constructor, only for testing
-	Resource(string &type); //primitive constructor, set the type of resource and set the armor
 	virtual ~Resource(); //destructor. destroys the meter, but type is not deleted.
 
-	int getMaxAmount(); //getter for max
+	int getCurrentAmount(); //getter for current
+	virtual void subtract() = 0; //subtract from the current amount by default
+	void subtract(int request); //subtract from the current amount by requested
 	
+	int getMaxAmount(); //getter for max
 	void setMaxAmount(int &res); //setter for max
 
-	int getCurrentAmount(); //getter for current
-	virtual void subtractFromAmount(Worker &w) = 0; //subtract from the current amount
 
 	static const int STANDARD = 2500;
 };

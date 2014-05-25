@@ -1,10 +1,6 @@
 #ifndef _ARMOR_H
 #define _ARMOR_H
 
-#include <string>
-
-using namespace std;
-
 /*
 Explanation:
 	armor has two variables, isInvulnerable flag and the value of armor points.
