@@ -167,5 +167,8 @@
     <ClCompile Include="Regen.cpp">
       <Filter>Source Files\Defense</Filter>
     </ClCompile>
+    <ClCompile Include="Mineral.cpp">
+      <Filter>Source Files\Objects\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
