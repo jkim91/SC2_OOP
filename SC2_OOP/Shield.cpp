@@ -1,27 +1,28 @@
 #include "Shield.h"
 
 Shield::Shield(){
-	current = new int(1);
-	max = new int(1);
-	useDefault = true;
+	regen();
 }
 
-Shield::Shield(int &max){
-	this->max = &max;
-	current = new int(max);
-	useDefault = false;
+Shield::Shield(float &max){
+	regen();
 }
 
 Shield::Shield(Shield &s){
-	this->current = new int(*s.current);
-	this->max = s.max;
-	useDefault = false;
+	regen();
 }
 
 Shield::~Shield(){
+	delete currentCooldown;
 }
 
 void Shield::regen(){
-	if(isFull()) return;
-	add(1);
+	currentCooldown = new float(0.0);
+	while(true){
+		if(!isFull()){
+			if(*currentCooldown == cooldown) add(1);
+			else (*currentCooldown)++;
+		}
+		if(*current > *max) setCurrentToMax();
+	}
 }

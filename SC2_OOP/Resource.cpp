@@ -1,10 +1,9 @@
 #include "Resource.h"
-#include "Health.h"
 #include "Armor.h"
 #include "Meter.h"
 
 void Resource::initDetails(){
-	amount = new Meter();
+	amount = new Meter(STANDARD);
 }
 
 void Resource::destroyDetails(){

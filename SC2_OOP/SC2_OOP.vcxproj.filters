@@ -52,6 +52,12 @@
     <Filter Include="Source Files\Defense">
       <UniqueIdentifier>{3dc6f5fb-3a47-4c3c-9434-af1601502072}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Objects\Resource">
+      <UniqueIdentifier>{708053c9-94d4-43ae-a100-7f8baa61f702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Resource">
+      <UniqueIdentifier>{0a4bca89-f582-4f6f-8f93-d29b50361807}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -84,9 +90,6 @@
     <ClInclude Include="Armor.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Header Files\World</Filter>
     </ClInclude>
@@ -98,9 +101,6 @@
     </ClInclude>
     <ClInclude Include="Physics.h">
       <Filter>Header Files\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="Health.h">
-      <Filter>Header Files\Defense</Filter>
     </ClInclude>
     <ClInclude Include="Shield.h">
       <Filter>Header Files\Defense</Filter>
@@ -126,6 +126,15 @@
     <ClInclude Include="Weapon.h">
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Objects\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Mineral.h">
+      <Filter>Header Files\Objects\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Regen.h">
+      <Filter>Header Files\Defense</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -146,9 +155,6 @@
     <ClCompile Include="Armor.cpp">
       <Filter>Source Files\Defense</Filter>
     </ClCompile>
-    <ClCompile Include="Health.cpp">
-      <Filter>Source Files\Defense</Filter>
-    </ClCompile>
     <ClCompile Include="Meter.cpp">
       <Filter>Source Files\Defense</Filter>
     </ClCompile>
@@ -156,7 +162,10 @@
       <Filter>Source Files\Defense</Filter>
     </ClCompile>
     <ClCompile Include="Resource.cpp">
-      <Filter>Source Files\Objects</Filter>
+      <Filter>Source Files\Objects\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Regen.cpp">
+      <Filter>Source Files\Defense</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

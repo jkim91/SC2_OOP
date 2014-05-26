@@ -1,5 +1,4 @@
 #include "GameObject.h"
-#include "Health.h"
 #include "Armor.h"
 #include "Meter.h"
 
@@ -13,9 +12,9 @@ GameObject::~GameObject(){
 
 void GameObject::init(){
 	name = new string;
-	groundStatus = new int;
-	sightRadius = new int;
-	health = new Health();
+	groundStatus = new bool;
+	sightRadius = new float;
+	health = new Meter();
 	armor = new Armor();
 	attributes = new set<string>();
 	player = NULL;
@@ -51,33 +50,33 @@ void GameObject::setName(string &name){
 	this->name = &name;
 }
 
-int GameObject::getGroundStatus(){
+bool GameObject::getGroundStatus(){
 	return *groundStatus;
 }
 
-int GameObject::getSightRadius(){
+float GameObject::getSightRadius(){
 	return *sightRadius;
 }
 
-void GameObject::setSightRadius(int sightRadius){
+void GameObject::setSightRadius(float sightRadius){
 	*(this->sightRadius) = sightRadius;
 }
 
-Health* GameObject::getHealth(){
+Meter* GameObject::getHealth(){
 	return health;
 }
 
-void GameObject::addHealth(int amount){
+void GameObject::addHealth(float amount){
 	health->add(amount);
 }
 
-void GameObject::subHealth(int amount){
+void GameObject::subHealth(float amount){
 	health->subtract(amount);
 }
 
-void GameObject::setHealth(Health &h){
+void GameObject::setHealth(Meter &h){
 	delete health;
-	health = new Health(h);
+	health = new Meter(h);
 }
 
 Armor* GameObject::getArmor(){

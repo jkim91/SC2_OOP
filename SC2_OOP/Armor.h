@@ -10,15 +10,15 @@ Explanation:
 class Armor{
 protected:
 	bool isInvulnerable; //is it invulnerable? (UNIQUE)
-	int val; //amount of armor points (UNIQUE)
+	float val; //amount of armor points (UNIQUE)
 public:
 	Armor(); //default constructor
-	Armor(int val);//primitive constructor, default to false for invulnerable status
-	Armor(int val, bool flag); //primitive constructor, with value and flag
+	Armor(float val);//primitive constructor, default to false for invulnerable status
+	Armor(float val, bool flag); //primitive constructor, with value and flag
 	Armor(Armor &a); //copy constructor (Deep copy)
 
-	int getVal(); //getter for value
-	void setVal(int val); //setter for val
+	float getVal(); //getter for value
+	void setVal(float val); //setter for val
 
 	bool getIsInvulnerable(); //getter for invulnerable
 	void setIsInvulnerable(bool flag); //setter for invulnerable

@@ -5,12 +5,12 @@ Armor::Armor(){
 	this->isInvulnerable = 0;
 }
 
-Armor:: Armor(int val){
+Armor:: Armor(float val){
 	this->val = val;
 	isInvulnerable = 0;
 }
 
-Armor::Armor(int val, bool flag){
+Armor::Armor(float val, bool flag){
 	this->val = val;
 	isInvulnerable = flag;
 }
@@ -19,11 +19,11 @@ Armor::Armor(Armor &a){
 	setVal(a.getVal());
 }
 
-int Armor::getVal(){
+float Armor::getVal(){
 	return val;
 }
 
-void Armor::setVal(int val){
+void Armor::setVal(float val){
 	this->val = val;
 }
 

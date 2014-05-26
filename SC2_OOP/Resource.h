@@ -31,7 +31,9 @@ public:
 	void setMaxAmount(int &res); //setter for max
 
 
-	static const int STANDARD = 2500;
+	static const float STANDARD;
 };
+
+const float Resource::STANDARD = 2500.0;
 
 #endif

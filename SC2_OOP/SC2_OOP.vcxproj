@@ -86,11 +86,12 @@
     <ClInclude Include="FusionCutter.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GatherCenter.h" />
-    <ClInclude Include="Health.h" />
     <ClInclude Include="Lift.h" />
     <ClInclude Include="Meter.h" />
+    <ClInclude Include="Mineral.h" />
     <ClInclude Include="Physics.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Regen.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Rotation.h" />
     <ClInclude Include="SCV.h" />
@@ -107,8 +108,8 @@
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="FusionCutter.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Health.cpp" />
     <ClCompile Include="Meter.cpp" />
+    <ClCompile Include="Regen.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="SC2_OOP.cpp" />
     <ClCompile Include="Shield.cpp" />

@@ -2,19 +2,19 @@
 #define NULL 0
 
 Meter::Meter(){
-	current = new int(1);
-	max = new int(1);
+	current = new float(1);
+	max = new float(1);
 	useDefault = true;
 }
 
-Meter::Meter(int &max){
+Meter::Meter(float &max){
 	this->max = &max;
-	current = new int(max);
+	current = new float(max);
 	useDefault = false;
 }
 
 Meter::Meter(Meter &m){
-	this->current = new int(*m.current);
+	this->current = new float(*m.current);
 	this->max = m.max;
 	useDefault = false;
 }
@@ -24,11 +24,11 @@ Meter::~Meter(){
 	if(useDefault) delete max;
 }
 
-int Meter::getCurrentValue(){
+float Meter::getCurrentValue(){
 	return *current;
 }
 
-void Meter::setCurrent(int val){
+void Meter::setCurrent(float val){
 	*(this->current) = val;
 }
 
@@ -36,26 +36,26 @@ void Meter::setCurrentToMax(){
 	*current = *max;
 }
 
-void Meter::add(int amount){
+void Meter::add(float amount){
 	*current += amount;
 }
 
-void Meter::subtract(int amount){
+void Meter::subtract(float amount){
 	*current -= amount;
 }
 
-int Meter::getMaxValue(){
+float Meter::getMaxValue(){
 	return *max;
 }
 
-void Meter::setMax(int val){
+void Meter::setMax(float val){
 	*max = val;
 }
 
-void Meter::linkMax(int &val){
+void Meter::linkMax(float &val){
 	max = &val;
 }
 
 bool Meter::isFull(){
-	return (*current >= *max);
+	return (*current == *max);
 }

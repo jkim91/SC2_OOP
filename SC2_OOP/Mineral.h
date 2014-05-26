@@ -9,6 +9,7 @@ class Mineral: public Resource
 protected:
 public:
 	Mineral();
+	void subtract();
 };
 
 #endif

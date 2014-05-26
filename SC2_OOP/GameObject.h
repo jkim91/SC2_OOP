@@ -23,8 +23,8 @@ class Armor;
 class Combat;
 class Weapon;
 class Transform;
-class Health;
 class Player;
+class Meter;
 
 class GameObject{
 private:
@@ -36,9 +36,9 @@ protected:
 	virtual void destroyDetails(); //additional details to be filled in for destroy()
 
 	string *name; //name of the object, usually the class name (SHARED)
-	int *groundStatus; //status for on the ground or air (UNIQUE)
-	int *sightRadius; //sight radius for what the object can "see" (UNIQUE)
-	Health *health; //health (UNIQUE)
+	bool *groundStatus; //status for on the ground or air (UNIQUE)
+	float *sightRadius; //sight radius for what the object can "see" (UNIQUE)
+	Meter *health; //health (UNIQUE)
 	Armor *armor; //armor (SHARED)
 	set<string> *attributes; //set of string attributes (SHARED)
 	Player *player; //player that owns this gameobject (SHARED)
@@ -51,15 +51,15 @@ public:
 	string getName(); //getter for name
 	void setName(string &name); //setter for name
 	
-	int getGroundStatus(); //getter for status. setter done in subclass constructors.
+	bool getGroundStatus(); //getter for status. setter done in subclass constructors.
 
-	int getSightRadius(); //getter for sight radius
-	void setSightRadius(int sightRadius); //set the radius to a new value
+	float getSightRadius(); //getter for sight radius
+	void setSightRadius(float sightRadius); //set the radius to a new value
 
-	Health* getHealth(); //getter for health pointer
-	virtual void addHealth(int amount); //add to the object's current health
-	virtual void subHealth(int amount); //subtract from the object's current health
-	void setHealth(Health &h); //setter for health
+	Meter* getHealth(); //getter for health pointer
+	virtual void addHealth(float amount); //add to the object's current health
+	virtual void subHealth(float amount); //subtract from the object's current health
+	void setHealth(Meter &h); //setter for health
 
 	Armor* getArmor(); //getter for armor pointer
 	void setArmor(Armor &a); //setter for armor
@@ -73,8 +73,8 @@ public:
 	Transform *transform; //object's transform (UNIQUE)
 
 	//ground or air status
-	static const int GROUND = 0;
-	static const int AIR = 1;
+	static const bool GROUND = 0;
+	static const bool AIR = 1;
 
 	//complete list of attributes in string
 	static const string LIGHT;
