@@ -11,11 +11,11 @@ Explanation:
 
 class Meter{
 protected:
-	float *current; //current value pofloater (UNIQUE)
-	float *max; //max value pofloater(SHARED)
-	bool useDefault; //check if the object was created using the default constructor
+	float *current; //current value pointer (UNIQUE)
+	float *max; //max value pointer(SHARED)
+	static float MAX_DEFAULT; //default max value
 public:
-	Meter(); //default constructor, creates a new float for max
+	Meter(); //default constructor, creates a new float for max (use only for testing)
 	Meter(float &max); //primitive constructor, creates new current from the reference, but max references the parameter
 	Meter(Meter &m); //copy constructor, creates current, but references the max of the copy
 	virtual ~Meter(); //destructor, deletes only the current, but deletes everything if it used default
@@ -27,11 +27,12 @@ public:
 	void subtract(float amount); //subtract from current amount
 
 	float getMaxValue(); //getter for max value, for GUI/debugging
-	void setMax(float val); //set the max to a new value
-	void linkMax(float &val); //link to an float from the parameter
-	
-	bool isFull(); //check if max is greater than or equal to current
+		
+	bool isFull(); //check if current is greater than or equal to max
+	bool isEmpty(); //check if current is less than or equal to 0.0
 
 };
+
+float Meter::MAX_DEFAULT = 1.0;
 
 #endif

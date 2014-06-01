@@ -1,9 +1,11 @@
 #include "Regen.h"
 #include "Meter.h"
 
+#define NULL 0
+
 Regen::Regen(){
-	m = 0;
-	rate = 0;
+	m = NULL;
+	rate = NULL;
 }
 
 Regen::Regen(Meter &m, float &rate){
@@ -13,15 +15,26 @@ Regen::Regen(Meter &m, float &rate){
 }
 
 Regen::~Regen(){
-	delete m;
 	delete rate;
 }
 
+Meter* Regen::getMeter(){
+	return m;
+}
+
+float Regen::getRateValue(){
+	return *rate;
+}
+
+float* Regen::getRatePointer(){
+	return rate;
+}
+
 void Regen::execute(){
-	while(true){
-		if(!(m->isFull())){
+	while (m != NULL){
+		while (!(m->isFull())){
 			m->add(*rate);
 		}
-		if(m->getCurrentValue > m->getMaxValue()) m->setCurrentToMax();
-	}
+		if (m->getCurrentValue() > m->getMaxValue()) m->setCurrentToMax();
+	}	
 }

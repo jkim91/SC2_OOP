@@ -10,13 +10,14 @@ Armor:: Armor(float val){
 	isInvulnerable = 0;
 }
 
-Armor::Armor(float val, bool flag){
-	this->val = val;
+Armor::Armor(bool flag){
+	this->val = 0;
 	isInvulnerable = flag;
 }
 
 Armor::Armor(Armor &a){
 	setVal(a.getVal());
+	setIsInvulnerable(a.getIsInvulnerable());
 }
 
 float Armor::getVal(){

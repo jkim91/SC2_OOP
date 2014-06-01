@@ -14,7 +14,7 @@ protected:
 public:
 	Armor(); //default constructor
 	Armor(float val);//primitive constructor, default to false for invulnerable status
-	Armor(float val, bool flag); //primitive constructor, with value and flag
+	Armor(bool flag); //primitive constructor, with value and flag
 	Armor(Armor &a); //copy constructor (Deep copy)
 
 	float getVal(); //getter for value
