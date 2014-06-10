@@ -138,9 +138,6 @@
     <ClInclude Include="Health.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
-      <Filter>Header Files\Defense</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
