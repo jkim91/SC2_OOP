@@ -22,78 +22,78 @@ using namespace std;
 class Armor;
 class Combat;
 class Weapon;
+class Health;
 class Transform;
 class Player;
 class Meter;
 
 class GameObject{
-private:
-protected:
-	void init(); //default constructor method (Template Method)
-	virtual void initDetails(); //additonal details to be filled in for init()
-
-	void destroy(); //destructor method (Template Method)
-	virtual void destroyDetails(); //additional details to be filled in for destroy()
-
-	string *name; //name of the object, usually the class name (SHARED)
-	bool *groundStatus; //status for on the ground or air (UNIQUE)
-	float *sightRadius; //sight radius for what the object can "see" (UNIQUE)
-	Meter *health; //health (UNIQUE)
-	Armor *armor; //armor (SHARED)
-	set<string> *attributes; //set of string attributes (SHARED)
-	Player *player; //player that owns this gameobject (SHARED)
-	bool useDefault; //check if the object was created with the default constructor
 public:
 	GameObject();
 	virtual ~GameObject();
 	
-	//getter and setter for name of gameobject
+	//methods
+	void addHealth(float amount); //add to the object's current health
+	void subHealth(float amount); //subtract from the object's current health
+
+	//getters
 	string getName(); //getter for name
-	void setName(string &name); //setter for name
-	
-	bool getGroundStatus(); //getter for status. setter done in subclass constructors.
-
+	bool getGroundStatus(); //getter for status. 
 	float getSightRadius(); //getter for sight radius
-	void setSightRadius(float sightRadius); //set the radius to a new value
-
-	Meter* getHealth(); //getter for health pointer
-	virtual void addHealth(float amount); //add to the object's current health
-	virtual void subHealth(float amount); //subtract from the object's current health
-	void setHealth(Meter &h); //setter for health
-
+	Health* getHealth(); //getter for health pointer
 	Armor* getArmor(); //getter for armor pointer
-	void setArmor(Armor &a); //setter for armor
-
 	set<string>* getAttributes(); //getter for all attributes
-	void setAttributes(set<string> &s); //setter for attributes
-
 	Player* getPlayer(); //getter for player
+	
+	//setters	
+	void setName(string &name); //setter for name	
+	void setSightRadius(float sightRadius); //set the radius to a new value
+	void setHealth(Health &h); //setter for health
+	void setArmor(Armor &a); //setter for armor
+	void setAttributes(set<string> &s); //setter for attributes
 	void linkToPlayer(Player &owner); //link to a player
-
+	
+	//geometry-related objects. all public
 	Transform *transform; //object's transform (UNIQUE)
 
+protected:
+	virtual void initDetails(); //additonal details to be filled in for init()
+
+	virtual void destroyDetails(); //additional details to be filled in for destroy()
+
+	string *name; //name of the object, usually the class name (SHARED)
+	bool groundStatus; //status for on the ground or air (UNIQUE)
+	float *sightRadius; //sight radius for what the object can "see" (SHARED)
+	Health *health; // health of gameObject (UNIQUE)
+	set<string> *attributes; //set of string attributes (SHARED)
+	Player *player; //player that owns this gameobject (SHARED)
+	bool useDefault; //check if the object was created with the default constructor
+
 	//ground or air status
-	static const bool GROUND = 0;
-	static const bool AIR = 1;
+	static bool GROUND;
+	static bool AIR;
 
 	//complete list of attributes in string
-	static const string LIGHT;
-	static const string ARMORED;
-	static const string BIO;
-	static const string MECH;
-	static const string DETECTOR;
-	static const string MASSIVE;
-	static const string PSIONIC;
-	static const string STRUCTURE;
+	static string LIGHT;
+	static string ARMORED;
+	static string BIO;
+	static string MECH;
+	static string DETECTOR;
+	static string MASSIVE;
+	static string PSIONIC;
+	static string STRUCTURE;
 };
 
-const string GameObject::LIGHT = "Light";
-const string GameObject::ARMORED = "Armored";
-const string GameObject::BIO = "Biological";
-const string GameObject::MECH = "Mechanical";
-const string GameObject::DETECTOR = "Detector";
-const string GameObject::MASSIVE = "Massive";
-const string GameObject::PSIONIC = "Psionic";
-const string GameObject::STRUCTURE = "Structure";
+bool GameObject::GROUND = 0;
+bool GameObject::AIR = 1;
+
+string GameObject::LIGHT = "Light";
+string GameObject::ARMORED = "Armored";
+string GameObject::BIO = "Biological";
+string GameObject::MECH = "Mechanical";
+string GameObject::DETECTOR = "Detector";
+string GameObject::MASSIVE = "Massive";
+string GameObject::PSIONIC = "Psionic";
+string GameObject::STRUCTURE = "Structure";
 
 #endif

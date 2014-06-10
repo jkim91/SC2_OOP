@@ -3,32 +3,27 @@
 #define _SHIELD_H
 
 /*
-Explanation: Shield has a meter and a regen object
+Explanation: Shield is a subclass of Health with a Regen object and cooldown
 */
 
-class Meter;
+#include "Health.h"
 class Regen;
-class Armor;
 
-class Shield{
-protected:
-	static float cooldown; //ALL shields will have the same cooldown timer
-	float* currentCooldown;
-	Meter* meter;
-	Regen* regen;
-	Armor* armor;
+class Shield : public Health{
 public:
 	Shield(); //default constructor, use only for testing
-	Shield(Meter &m, Regen &r, Armor &a); //primitive constructor, creates a new meter and regen object
+	Shield(Meter &m, Armor &a, Regen &r); //primitive constructor, creates a new meter and regen object
 	Shield(Shield &s); //copy constructor (deep-copy)
 	~Shield(); //destructor
 
-	Meter* getMeter();
-	Armor* getArmor();
 	Regen* getRegen();
-
+	void setRegen(Regen &r);
+protected:
+	Meter* coolDown; //cooldown for regen (UNIQUE)
+	Regen* regen; 
+	static float COOLDOWN_LIMIT;
 };
 
-float Shield::cooldown = 10.0;
+float Shield::COOLDOWN_LIMIT = 10.0;
 
 #endif

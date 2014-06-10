@@ -8,9 +8,6 @@ Explanation:
 */
 
 class Armor{
-protected:
-	bool isInvulnerable; //is it invulnerable? (UNIQUE)
-	float val; //amount of armor points (UNIQUE)
 public:
 	Armor(); //default constructor
 	Armor(float val);//primitive constructor, default to false for invulnerable status
@@ -23,6 +20,9 @@ public:
 	bool getIsInvulnerable(); //getter for invulnerable
 	void setIsInvulnerable(bool flag); //setter for invulnerable
 
+protected:
+	bool isInvulnerable; //is it invulnerable? (UNIQUE)
+	float val; //amount of armor points (UNIQUE)
 };
 
 #endif

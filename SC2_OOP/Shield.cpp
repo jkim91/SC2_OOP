@@ -6,38 +6,29 @@
 #define NULL 0
 
 Shield::Shield(){
-	meter = new Meter();
 	regen = new Regen();
-	armor = NULL;
+	coolDown = new Meter(COOLDOWN_LIMIT);
 }
 
-Shield::Shield(Meter &m, Regen &r, Armor &a){
+Shield::Shield(Meter &m, Armor &a, Regen &r){
 	meter = new Meter(m);
-	regen = new Regen(*meter, *r.getRatePointer());
 	armor = &a;
+	regen = new Regen(*meter, *r.getRatePointer());
+	coolDown = new Meter(COOLDOWN_LIMIT);
 }
 
-Shield::Shield(Shield &s){
-	meter = new Meter(*s.meter);
+Shield::Shield(Shield &s) : Health(s){
 	regen = new Regen(*meter, *(s.regen->getRatePointer()));
-	armor = s.armor;
 }
 
 Shield::~Shield(){
-	delete currentCooldown;
-	delete meter;
-	meter = NULL;
 	delete regen;
-}
-
-Meter* Shield::getMeter(){
-	return meter;
-}
-
-Armor* Shield::getArmor(){
-	return armor;
 }
 
 Regen* Shield::getRegen(){
 	return regen;
+}
+
+void Shield::setRegen(Regen &r){
+	this->regen = &r;
 }

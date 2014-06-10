@@ -1,41 +1,29 @@
 #include "GameObject.h"
-#include "Armor.h"
-#include "Meter.h"
+#include "Health.h"
 
 GameObject::GameObject(){
-	init();
-}
-
-GameObject::~GameObject(){
-	destroy();
-}
-
-void GameObject::init(){
 	name = new string;
 	groundStatus = new bool;
 	sightRadius = new float;
-	health = new Meter();
-	armor = new Armor();
+	health = new Health();
 	attributes = new set<string>();
 	player = NULL;
 	useDefault = true;
 	initDetails();
 }
 
-void GameObject::initDetails(){
-	return;
-}
-
-void GameObject::destroy(){
-	delete groundStatus;
+GameObject::~GameObject(){
 	delete sightRadius;
 	delete health;
-	if(useDefault){
+	if (useDefault){
 		delete name;
 		delete attributes;
-		delete armor;
 	}
 	destroyDetails();
+}
+
+void GameObject::initDetails(){
+	return;
 }
 
 void GameObject::destroyDetails(){
@@ -51,7 +39,7 @@ void GameObject::setName(string &name){
 }
 
 bool GameObject::getGroundStatus(){
-	return *groundStatus;
+	return groundStatus;
 }
 
 float GameObject::getSightRadius(){
@@ -62,7 +50,7 @@ void GameObject::setSightRadius(float sightRadius){
 	*(this->sightRadius) = sightRadius;
 }
 
-Meter* GameObject::getHealth(){
+Health* GameObject::getHealth(){
 	return health;
 }
 
@@ -74,17 +62,17 @@ void GameObject::subHealth(float amount){
 	health->subtract(amount);
 }
 
-void GameObject::setHealth(Meter &h){
+void GameObject::setHealth(Health &h){
 	delete health;
-	health = new Meter(h);
+	health = new Health(h);
 }
 
 Armor* GameObject::getArmor(){
-	return armor;
+	return health->getArmor();
 }
 
 void GameObject::setArmor(Armor &a){
-	armor = &a;
+	health->setArmor(a);
 }
 
 set<string>* GameObject::getAttributes(){

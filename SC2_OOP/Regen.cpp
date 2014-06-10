@@ -5,13 +5,14 @@
 
 Regen::Regen(){
 	m = NULL;
-	rate = NULL;
+	rate = new float(0.0);
+	executeSwitch = false;
 }
 
 Regen::Regen(Meter &m, float &rate){
 	this->m = &m;
 	this->rate = &rate;
-	execute();
+	executeSwitch = false;
 }
 
 Regen::~Regen(){
@@ -30,8 +31,25 @@ float* Regen::getRatePointer(){
 	return rate;
 }
 
+void Regen::setMeter(Meter &m){
+	this->m = &m;
+}
+
+void Regen::setRate(float rate){
+	*(this->rate) = rate;
+}
+
+void Regen::switchOn(){
+	executeSwitch = true;
+}
+
+void Regen::switchOff(){
+	executeSwitch = false;
+}
+
 void Regen::execute(){
 	while (m != NULL){
+		if (executeSwitch) break;
 		while (!(m->isFull())){
 			m->add(*rate);
 		}

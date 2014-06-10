@@ -10,10 +10,6 @@ Explanation:
 */
 
 class Meter{
-protected:
-	float *current; //current value pointer (UNIQUE)
-	float *max; //max value pointer(SHARED)
-	static float MAX_DEFAULT; //default max value
 public:
 	Meter(); //default constructor, creates a new float for max (use only for testing)
 	Meter(float &max); //primitive constructor, creates new current from the reference, but max references the parameter
@@ -30,6 +26,11 @@ public:
 		
 	bool isFull(); //check if current is greater than or equal to max
 	bool isEmpty(); //check if current is less than or equal to 0.0
+
+protected:
+	float current; //current value pointer (UNIQUE)
+	float *max; //max value pointer(SHARED)
+	static float MAX_DEFAULT; //default max value
 
 };
 
