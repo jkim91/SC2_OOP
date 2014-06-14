@@ -1,51 +1,62 @@
 #include "Meter.h"
+#define NULL 0
 
-Meter::Meter(){
-	max = &MAX_DEFAULT;
-	current = MAX_DEFAULT;
+template<class T>
+Meter<T>::Meter(){
+	max = NULL;
+	current = new T;
 }
 
-Meter::Meter(float &max){
+template<class T>
+Meter<T>::Meter(T &max){
 	this->max = &max;
 	current = max;
 }
 
-Meter::Meter(Meter &m){
+template<class T>
+Meter<T>::Meter(Meter<T> &m){
 	this->max = m.max;
-	this->current = m.current;
+	this->current = new T(*m.current);
 }
 
-Meter::~Meter(){
+template<class T>
+Meter<T>::~Meter(){
+	delete current;
 }
 
-float Meter::getCurrentValue(){
-	return current;
+template<class T>
+void Meter<T>::add(T &amount){
+	*current += amount;
 }
 
-void Meter::setCurrent(float val){
-	this->current = val;
+template<class T>
+void Meter<T>::subtract(T &amount){
+	*current -= amount;
 }
 
-void Meter::setCurrentToMax(){
-	current = *max;
-}
-
-void Meter::add(float amount){
-	current += amount;
-}
-
-void Meter::subtract(float amount){
-	current -= amount;
-}
-
-float Meter::getMaxValue(){
+template<class T>
+T Meter<T>::getMaxValue(){
 	return *max;
 }
 
-bool Meter::isFull(){
-	return (current >= *max);
+template<class T>
+bool Meter<T>::isFull(){
+	return (*current >= *max);
 }
 
-bool Meter::isEmpty(){
-	return (current <= 0.0);
+template<class T>
+T Meter<T>::getCurrentValue(){
+	return *current;
 }
+
+template<class T>
+void Meter<T>::setCurrent(T &val){
+	*current = new T(val);
+}
+
+template<class T>
+void Meter<T>::setCurrentToMax(){
+	*current = *max;
+}
+
+

@@ -19,18 +19,16 @@ Explanation:
 
 using namespace std;
 
-class Armor;
-class Combat;
-class Weapon;
 class Health;
 class Transform;
 class Player;
-class Meter;
+class Armor;
 
 class GameObject{
 public:
-	GameObject();
-	virtual ~GameObject();
+	GameObject(); //default constructor
+	GameObject(GameObject &g); //copy constructor
+	virtual ~GameObject(); //destructor
 	
 	//methods
 	void addHealth(float amount); //add to the object's current health
@@ -40,14 +38,15 @@ public:
 	string getName(); //getter for name
 	bool getGroundStatus(); //getter for status. 
 	float getSightRadius(); //getter for sight radius
-	Health* getHealth(); //getter for health pointer
-	Armor* getArmor(); //getter for armor pointer
+	Health* getHealth(); //getter for health
+	Armor* getArmor(); //getter for armor
 	set<string>* getAttributes(); //getter for all attributes
 	Player* getPlayer(); //getter for player
 	
 	//setters	
-	void setName(string &name); //setter for name	
-	void setSightRadius(float sightRadius); //set the radius to a new value
+	void setName(string &name); //setter for name
+	void setSightRadius(float &sightRadius); //set the radius to a new value
+	void setGroundStatus(bool &status); //set ground status
 	void setHealth(Health &h); //setter for health
 	void setArmor(Armor &a); //setter for armor
 	void setAttributes(set<string> &s); //setter for attributes
@@ -57,17 +56,12 @@ public:
 	Transform *transform; //object's transform (UNIQUE)
 
 protected:
-	virtual void initDetails(); //additonal details to be filled in for init()
-
-	virtual void destroyDetails(); //additional details to be filled in for destroy()
-
 	string *name; //name of the object, usually the class name (SHARED)
-	bool groundStatus; //status for on the ground or air (UNIQUE)
+	bool *groundStatus; //status for on the ground or air (SHARED)
 	float *sightRadius; //sight radius for what the object can "see" (SHARED)
 	Health *health; // health of gameObject (UNIQUE)
 	set<string> *attributes; //set of string attributes (SHARED)
 	Player *player; //player that owns this gameobject (SHARED)
-	bool useDefault; //check if the object was created with the default constructor
 
 	//ground or air status
 	static bool GROUND;

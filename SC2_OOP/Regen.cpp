@@ -3,56 +3,30 @@
 
 #define NULL 0
 
-Regen::Regen(){
-	m = NULL;
-	rate = new float(0.0);
-	executeSwitch = false;
+template<class T>
+Regen<T>::Regen(){
+	rate = (float) 0.0;
 }
 
-Regen::Regen(Meter &m, float &rate){
-	this->m = &m;
-	this->rate = &rate;
-	executeSwitch = false;
+template<class T>
+Regen<T>::Regen(float &val){
+	rate = val;
 }
 
-Regen::~Regen(){
-	delete rate;
+template<class T>
+void Regen<T>::execute(Meter<T> &m){
+	while (!(m.isFull())){
+		m.add(rate);
+	}
+	if (m.getCurrentValue() > m.getMaxValue()) m.setCurrentToMax();
 }
 
-Meter* Regen::getMeter(){
-	return m;
+template<class T>
+Regen<T>::Regen(float &rate){
+	this->rate = rate;
 }
 
-float Regen::getRateValue(){
-	return *rate;
+template<class T>
+Regen<T>::~Regen(){
 }
 
-float* Regen::getRatePointer(){
-	return rate;
-}
-
-void Regen::setMeter(Meter &m){
-	this->m = &m;
-}
-
-void Regen::setRate(float rate){
-	*(this->rate) = rate;
-}
-
-void Regen::switchOn(){
-	executeSwitch = true;
-}
-
-void Regen::switchOff(){
-	executeSwitch = false;
-}
-
-void Regen::execute(){
-	while (m != NULL){
-		if (executeSwitch) break;
-		while (!(m->isFull())){
-			m->add(*rate);
-		}
-		if (m->getCurrentValue() > m->getMaxValue()) m->setCurrentToMax();
-	}	
-}

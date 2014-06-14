@@ -4,31 +4,32 @@
 
 /*
 	Explanation: Health is an object for all GameObjects. It has a meter for its health and armor, which affects how health is changed by damage.
-
 */
 
-class Meter;
+template <class T> class Meter;
 class Armor;
 
 class Health{
 public:
 	Health(); //default constructor
-	Health(Meter &m, Armor &a); //primitive constructor
+	Health(Meter<float> &m, Armor &a); //primitive constructor
 	Health(Health &h); //copy constructor
 	virtual ~Health();
 
+	//methods
+	void add(float amount); //add amount to health meter
+	void subtract(float amount); //subtract amount from health meter
+
 	//getters
-	Meter* getMeter();
-	Armor* getArmor();
+	Meter<float> getMeter();
+	Armor getArmor();
 
 	//setters
-	void setMeter(Meter &m);
+	void setMeter(Meter<float> &m);
 	void setArmor(Armor &a);
 
-	void add(float amount);
-	void subtract(float amount);
 protected:
-	Meter* meter; //health meter (UNIQUE)
+	Meter<float> meter; //health meter (UNIQUE)
 	Armor* armor; //armor (SHARED)
 	static Armor DEFAULT_ARMOR; //armor for default constructor
 };

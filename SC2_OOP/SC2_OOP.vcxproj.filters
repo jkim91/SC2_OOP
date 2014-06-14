@@ -126,17 +126,23 @@
     <ClInclude Include="Weapon.h">
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files\Objects\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="Mineral.h">
-      <Filter>Header Files\Objects\Resource</Filter>
-    </ClInclude>
     <ClInclude Include="Regen.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
     <ClInclude Include="Health.h">
       <Filter>Header Files\Defense</Filter>
+    </ClInclude>
+    <ClInclude Include="GasCollector.h">
+      <Filter>Header Files\Objects\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="VespeneGeyser.h">
+      <Filter>Header Files\Objects\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceStructure.h">
+      <Filter>Header Files\Objects\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="MineralField.h">
+      <Filter>Header Files\Objects\Resource</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -164,17 +170,23 @@
     <ClCompile Include="Shield.cpp">
       <Filter>Source Files\Defense</Filter>
     </ClCompile>
-    <ClCompile Include="Resource.cpp">
-      <Filter>Source Files\Objects\Resource</Filter>
-    </ClCompile>
     <ClCompile Include="Regen.cpp">
       <Filter>Source Files\Defense</Filter>
     </ClCompile>
-    <ClCompile Include="Mineral.cpp">
-      <Filter>Source Files\Objects\Resource</Filter>
-    </ClCompile>
     <ClCompile Include="Health.cpp">
       <Filter>Source Files\Defense</Filter>
+    </ClCompile>
+    <ClCompile Include="GasCollector.cpp">
+      <Filter>Source Files\Objects\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="VespeneGeyser.cpp">
+      <Filter>Source Files\Objects\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceStructure.cpp">
+      <Filter>Source Files\Objects\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="MineralField.cpp">
+      <Filter>Source Files\Objects\Resource</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
