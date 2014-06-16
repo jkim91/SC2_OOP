@@ -7,26 +7,27 @@
 
 Shield::Shield(){
 	regen = NULL;
-	coolDown = Meter<float>(COOLDOWN_LIMIT);
+	coolDown = new Meter<float>(COOLDOWN_LIMIT);
 	reset = false;
 	restore();
 }
 
 Shield::Shield(Meter<float> &m, Armor &a, Regen<float> &r) : Health(m, a){
 	regen = &r;
-	coolDown = Meter<float>(COOLDOWN_LIMIT);
+	coolDown = new Meter<float>(COOLDOWN_LIMIT);
 	reset = false;
 	restore();
 }
 
 Shield::Shield(Shield &s) : Health(s){
 	regen = s.regen;
-	coolDown = Meter<float>(s.coolDown);
+	coolDown = new Meter<float>(*s.coolDown);
 	reset = false;
 	restore();
 }
 
 Shield::~Shield(){
+	delete coolDown;
 }
 
 void Shield::resetCoolDown(){
@@ -38,7 +39,7 @@ Regen<float> Shield::getRegen(){
 }
 
 Meter<float> Shield::getCoolDown(){
-	return coolDown;
+	return *coolDown;
 }
 
 void Shield::setRegen(Regen<float> &r){
@@ -46,14 +47,15 @@ void Shield::setRegen(Regen<float> &r){
 }
 
 void Shield::setCoolDown(Meter<float> &m){
-	coolDown = Meter<float>(m);
+	if (coolDown != 0) delete coolDown;
+	coolDown = new Meter<float>(m);
 }
 
 void Shield::restore(){
 	while (regen != NULL){
-		if (reset) coolDown.setCurrent(0.0);
-		while (!(coolDown.isFull())) coolDown.add(1.0);
+		if (reset) coolDown->setCurrent(0.0);
+		while (!(coolDown->isFull())) coolDown->add(1.0);
 		reset = false;
-		if (!(meter.isFull())) regen->execute(meter);
+		if (!(meter->isFull())) regen->execute(*meter);
 	}
 }

@@ -9,7 +9,9 @@ Explanation:
 
 #include "GameObject.h"
 
-class Meter;
+template <class T> class Meter;
+class Resource;
+class Worker;
 
 class ResourceStructure : public GameObject
 {
@@ -19,23 +21,25 @@ public:
 	virtual ~ResourceStructure(); //destructor. destroys the meter, but type is not deleted.
 
 	//methods
-	virtual void subtract() = 0; //subtract from the current amount by default. Override with subclasses
+	virtual void subtract() = 0; //subtract from the current amount via default
 	void subtract(int request); //subtract from the current amount by requested
+	void giveResource(Worker &w); //give Resource object to Worker
+	virtual Resource* createResource() = 0; //create the appropriate resource (Factory Method)
 	
 	//getters
-	Meter* getAmount(); //getter for amount meter
+	Meter<int> getAmount(); //getter for amount meter
 	int getMaxAmount(); //getter for max amount value
 	int getCurrentAmount(); //getter for current amount value
 
 	//setters
-	void setMaxAmount(Meter &m); //setter for amount
+	void setAmount(Meter<int> &m); //setter for amount
 	
 protected:
-	Meter *amount; //amount of resource it currently has. (UNIQUE)
+	Meter<int> *amount; //amount of resource it currently has. (UNIQUE)
 	
-	static float STANDARD;
+	static int STANDARD;
 };
 
-float ResourceStructure::STANDARD = 2500.0;
+int ResourceStructure::STANDARD = 2500;
 
 #endif

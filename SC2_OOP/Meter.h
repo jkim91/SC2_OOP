@@ -18,8 +18,8 @@ public:
 	virtual ~Meter(); //destructor, deletes only the current, but deletes everything if it used default
 
 	//methods
-	void add(T &amount); //add to current amount
-	void subtract(T &amount); //subtract from current amount
+	void add(T amount); //add to current amount
+	void subtract(T amount); //subtract from current amount
 
 	//functions
 	bool isFull(); //check if current is greater than or equal to max
@@ -29,7 +29,7 @@ public:
 	T getMaxValue(); //getter for max value, for GUI/debugging
 
 	//setters
-	void setCurrent(T &val); //setter for current, does not create a new float.
+	void setCurrent(T val); //setter for current, does not create a new float.
 	void setCurrentToMax(); //set the current to max value		
 
 protected:

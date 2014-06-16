@@ -19,9 +19,6 @@
     <Filter Include="Header Files\Abilities">
       <UniqueIdentifier>{fef6ab71-c3dc-49c7-aebd-455f0ad17c06}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Interfaces">
-      <UniqueIdentifier>{86beacc2-d89f-4f5c-83e2-241565e3139b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Geometry">
       <UniqueIdentifier>{d9ab5dda-22a9-4c16-85fe-4ec68c79bc2a}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,18 @@
     </Filter>
     <Filter Include="Header Files\Objects\Resource">
       <UniqueIdentifier>{708053c9-94d4-43ae-a100-7f8baa61f702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Resource\ResourceFragment">
+      <UniqueIdentifier>{be0a4bde-9bba-46df-b621-951d90690ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Resource\Source">
+      <UniqueIdentifier>{3d338902-5d13-498a-a32e-5bf43a43f918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Resource\Add-on">
+      <UniqueIdentifier>{da4d9358-c1b4-4842-87cc-dbc85c498004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Resource\Destination">
+      <UniqueIdentifier>{d006c76a-304c-4f6d-b3e7-a7ea24ecce9b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,15 +66,6 @@
     <ClInclude Include="Unit.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Combat.h">
-      <Filter>Header Files\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
-      <Filter>Header Files\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="Builder.h">
-      <Filter>Header Files\Interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="Armor.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
@@ -84,17 +84,11 @@
     <ClInclude Include="Shield.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
-    <ClInclude Include="GatherCenter.h">
-      <Filter>Header Files\Interfaces</Filter>
-    </ClInclude>
     <ClInclude Include="Meter.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files\World</Filter>
-    </ClInclude>
-    <ClInclude Include="Lift.h">
-      <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="SCV.h">
       <Filter>Header Files\Objects</Filter>
@@ -111,17 +105,35 @@
     <ClInclude Include="Health.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
-    <ClInclude Include="GasCollector.h">
-      <Filter>Header Files\Objects\Resource</Filter>
+    <ClInclude Include="Builder.h">
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="VespeneGeyser.h">
-      <Filter>Header Files\Objects\Resource</Filter>
+    <ClInclude Include="Combat.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Lift.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Objects\Resource\ResourceFragment</Filter>
     </ClInclude>
     <ClInclude Include="ResourceStructure.h">
-      <Filter>Header Files\Objects\Resource</Filter>
+      <Filter>Header Files\Objects\Resource\Source</Filter>
     </ClInclude>
     <ClInclude Include="MineralField.h">
-      <Filter>Header Files\Objects\Resource</Filter>
+      <Filter>Header Files\Objects\Resource\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="VespeneGeyser.h">
+      <Filter>Header Files\Objects\Resource\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="GasCollector.h">
+      <Filter>Header Files\Objects\Resource\Add-on</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Header Files\Objects\Resource\Destination</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceCenter.h">
+      <Filter>Header Files\Objects\Resource\Destination</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +177,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceCenter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

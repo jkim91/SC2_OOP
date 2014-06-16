@@ -29,7 +29,7 @@ public:
 	void setArmor(Armor &a);
 
 protected:
-	Meter<float> meter; //health meter (UNIQUE)
+	Meter<float> *meter; //health meter (UNIQUE)
 	Armor* armor; //armor (SHARED)
 	static Armor DEFAULT_ARMOR; //armor for default constructor
 };

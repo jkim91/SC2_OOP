@@ -1,5 +1,7 @@
 #include "GameObject.h"
 #include "Health.h"
+#include "Armor.h"
+#include "Player.h"
 
 GameObject::GameObject(){
 	name = NULL;
@@ -14,7 +16,7 @@ GameObject::GameObject(GameObject &g){
 	name = g.name;
 	groundStatus = g.groundStatus;
 	sightRadius = g.sightRadius;
-	health = new Health(*g.getHealth());
+	health = new Health(g.getHealth());
 	attributes = g.attributes;
 	player = g.player;
 }
@@ -43,20 +45,20 @@ float GameObject::getSightRadius(){
 	return *sightRadius;
 }
 
-Health* GameObject::getHealth(){
-	return health;
+Health GameObject::getHealth(){
+	return *health;
 }
 
-Armor* GameObject::getArmor(){
+Armor GameObject::getArmor(){
 	return health->getArmor();
 }
 
-set<string>* GameObject::getAttributes(){
-	return attributes;
+set<string> GameObject::getAttributes(){
+	return *attributes;
 }
 
-Player* GameObject::getPlayer(){
-	return player;
+Player GameObject::getPlayer(){
+	return *player;
 }
 
 void GameObject::setName(string &name){

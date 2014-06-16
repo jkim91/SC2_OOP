@@ -6,15 +6,22 @@
 
 using namespace std;
 
+class ResourceStructure;
 class Resource;
-class GatherCenter;
+class ResourceCenter;
 
 class Worker{
 public:
-	virtual void gather(Resource &r); //gather from a resource and obtain a resource fragment
-	virtual void dropOff(GatherCenter &g); //drop the resource fragment at a gather center
-	virtual void gatherAnimation() = 0; //gather animation
-	virtual void dropOffAnimation() = 0;//drop-off animation
+	Worker(); //default constructor
+	Worker(Worker &w); //copy constructor
+	virtual ~Worker(); //destructor
+
+	virtual void gather(ResourceStructure &r); //gather from a resource and obtain a resource fragment
+	virtual void dropOff(ResourceCenter *g); //drop the resource fragment at a gather center
+	//virtual void gatherAnimation() = 0; //gather animation
+	//virtual void dropOffAnimation() = 0;//drop-off animation
+protected:
+	Resource *res; //resource that the Worker object possesses
 };
 
 #endif

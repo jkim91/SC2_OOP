@@ -10,7 +10,7 @@ Meter<T>::Meter(){
 template<class T>
 Meter<T>::Meter(T &max){
 	this->max = &max;
-	current = max;
+	current = new T(max);
 }
 
 template<class T>
@@ -25,12 +25,12 @@ Meter<T>::~Meter(){
 }
 
 template<class T>
-void Meter<T>::add(T &amount){
+void Meter<T>::add(T amount){
 	*current += amount;
 }
 
 template<class T>
-void Meter<T>::subtract(T &amount){
+void Meter<T>::subtract(T amount){
 	*current -= amount;
 }
 
@@ -50,7 +50,7 @@ T Meter<T>::getCurrentValue(){
 }
 
 template<class T>
-void Meter<T>::setCurrent(T &val){
+void Meter<T>::setCurrent(T val){
 	*current = new T(val);
 }
 

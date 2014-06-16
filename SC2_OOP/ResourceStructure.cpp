@@ -2,11 +2,11 @@
 #include "Meter.h"
 
 ResourceStructure::ResourceStructure(){
-	amount = new Meter(STANDARD);
+	amount = new Meter<int>(STANDARD);
 }
 
 ResourceStructure::ResourceStructure(ResourceStructure &r) : GameObject(r){
-	amount = new Meter(*r.amount);
+	amount = new Meter<int>(*r.amount);
 }
 
 ResourceStructure::~ResourceStructure(){
@@ -17,8 +17,12 @@ void ResourceStructure::subtract(int request){
 	amount->subtract(request);
 }
 
-Meter* ResourceStructure::getAmount(){
-	return amount;
+void ResourceStructure::giveResource(Worker &w){
+
+}
+
+Meter<int> ResourceStructure::getAmount(){
+	return *amount;
 }
 
 int ResourceStructure::getCurrentAmount(){
@@ -29,6 +33,7 @@ int ResourceStructure::getMaxAmount(){
 	return amount->getMaxValue();
 }
 
-void ResourceStructure::setMaxAmount(Meter &m){
-	amount = &m;
+void ResourceStructure::setAmount(Meter<int> &m){
+	if (amount != NULL) delete amount;
+	amount = new Meter<int>(m);
 }

@@ -32,7 +32,7 @@ public:
 protected:
 	void restore(); //restore the shield
 
-	Meter<float> coolDown; //cooldown for regen (UNIQUE)
+	Meter<float> *coolDown; //cooldown for regen (UNIQUE)
 	Regen<float> *regen;  //regen for shield meter (SHARED)
 	bool reset; //reset cooldown flag
 
