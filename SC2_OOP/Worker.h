@@ -2,24 +2,22 @@
 #ifndef _WORKER_H
 #define _WORKER_H
 
-#include <string>
-
-using namespace std;
+#include "Unit.h"
 
 class ResourceStructure;
 class Resource;
 class ResourceCenter;
 
-class Worker{
+class Worker : public Unit{
 public:
 	Worker(); //default constructor
 	Worker(Worker &w); //copy constructor
 	virtual ~Worker(); //destructor
 
 	virtual void gather(ResourceStructure &r); //gather from a resource and obtain a resource fragment
-	virtual void dropOff(ResourceCenter *g); //drop the resource fragment at a gather center
-	//virtual void gatherAnimation() = 0; //gather animation
-	//virtual void dropOffAnimation() = 0;//drop-off animation
+	virtual void returnCargo(); //return cargo to nearest ResourceCenter, if possible
+	virtual void dropOff(ResourceCenter &g); //drop the resource fragment at a gather center
+
 protected:
 	Resource *res; //resource that the Worker object possesses
 };

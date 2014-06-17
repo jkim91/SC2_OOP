@@ -85,6 +85,7 @@
     <ClInclude Include="Combat.h" />
     <ClInclude Include="FusionCutter.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Kinematics_2D.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="VespeneGeyser.h" />
     <ClInclude Include="GasCollector.h" />
@@ -112,6 +113,7 @@
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="FusionCutter.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Kinematics_2D.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceCenter.cpp" />
     <ClCompile Include="VespeneGeyser.cpp" />

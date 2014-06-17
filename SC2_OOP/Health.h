@@ -26,7 +26,9 @@ public:
 
 	//setters
 	void setMeter(Meter<float> &m);
+	void setMeter(Meter<float> *m);
 	void setArmor(Armor &a);
+	void setArmor(Armor *a);
 
 protected:
 	Meter<float> *meter; //health meter (UNIQUE)

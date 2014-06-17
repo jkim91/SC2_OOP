@@ -36,6 +36,15 @@ void Health::setMeter(Meter<float> &m){
 	meter = new Meter<float>(m);
 }
 
+void Health::setMeter(Meter<float> *m){
+	if (meter != 0) delete meter;
+	meter = new Meter<float>(*m);
+}
+
 void Health::setArmor(Armor &a){
 	armor = &a;
+}
+
+void Health::setArmor(Armor *a){
+	armor = a;
 }

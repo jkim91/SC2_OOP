@@ -18,6 +18,7 @@ public:
 
 	//methods
 	void execute(Meter<T> &m); //execute regeneration
+	void execute(Meter<T> *m); //execute regeneration
 
 	//getter
 	float getRate(); //get the value of rate

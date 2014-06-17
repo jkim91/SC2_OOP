@@ -27,7 +27,9 @@ public:
 
 	//setters
 	void setRegen(Regen<float> &r);
+	void setRegen(Regen<float> *r);
 	void setCoolDown(Meter<float> &m);
+	void setCoolDown(Meter<float> *m);
 
 protected:
 	void restore(); //restore the shield

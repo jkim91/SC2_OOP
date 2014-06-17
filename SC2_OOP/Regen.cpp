@@ -22,6 +22,15 @@ void Regen<T>::execute(Meter<T> &m){
 }
 
 template<class T>
+void Regen<T>::execute(Meter<T> *m){
+	if (m == NULL) return;
+	while (!(m->isFull())){
+		m->add(rate);
+	}
+	if (m->getCurrentValue() > m->getMaxValue()) m->setCurrentToMax();
+}
+
+template<class T>
 Regen<T>::Regen(float &rate){
 	this->rate = rate;
 }

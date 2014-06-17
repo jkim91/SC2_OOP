@@ -46,9 +46,18 @@ void Shield::setRegen(Regen<float> &r){
 	this->regen = &r;
 }
 
+void Shield::setRegen(Regen<float> *r){
+	this->regen = r;
+}
+
 void Shield::setCoolDown(Meter<float> &m){
 	if (coolDown != 0) delete coolDown;
 	coolDown = new Meter<float>(m);
+}
+
+void Shield::setCoolDown(Meter<float> *m){
+	if (coolDown != 0) delete coolDown;
+	coolDown = new Meter<float>(*m);
 }
 
 void Shield::restore(){
