@@ -16,10 +16,13 @@ Worker::~Worker(){
 }
 
 void Worker::gather(ResourceStructure &r){
-	r.subtract();
-	res = r.createResource();
+	r.giveResource(*this);
 }
 
-void Worker::dropOff(ResourceCenter *g){
-	if (g != NULL) g->obtain(res);
+Resource Worker::getResource(){
+	return *res;
+}
+
+void Worker::setResource(Resource *res){
+	this->res = res;
 }

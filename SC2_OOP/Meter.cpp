@@ -4,7 +4,7 @@
 template<class T>
 Meter<T>::Meter(){
 	max = NULL;
-	current = new T;
+	current = NULL;
 }
 
 template<class T>
@@ -21,7 +21,7 @@ Meter<T>::Meter(Meter<T> &m){
 
 template<class T>
 Meter<T>::~Meter(){
-	delete current;
+	if (current != NULL) delete current;
 }
 
 template<class T>

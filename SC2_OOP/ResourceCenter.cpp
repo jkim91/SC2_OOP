@@ -3,15 +3,12 @@
 #include "Resource.h"
 
 ResourceCenter::ResourceCenter(){
-
 }
 
 ResourceCenter::ResourceCenter(ResourceCenter &r) : GameObject(r){
-
 }
 
 ResourceCenter::~ResourceCenter(){
-
 }
 
 void ResourceCenter::obtain(Resource *r){

@@ -4,7 +4,7 @@
 
 #include "ResourceStructure.h"
 
-class VespeneGeyserCollector;
+class GasCollector;
 
 class VespeneGeyser : public ResourceStructure{
 public:
@@ -13,16 +13,17 @@ public:
 	virtual ~VespeneGeyser(); //destructor
 
 	//methods
-	void subtract();
+	virtual void giveResource(Worker &w);
+	virtual Resource* createResource(int amount);
 
 	//getters
-	VespeneGeyserCollector* getVespeneGeyserCollector();
+	GasCollector getGasCollector();
 
 	//setters
-	void setVespeneGeyserCollector(VespeneGeyserCollector &g);
+	void setGasCollector(GasCollector &g);
 
 protected:
-	VespeneGeyserCollector *collector; //VespeneGeyser collector object on top of VespeneGeyser geyser
+	GasCollector *collector; //VespeneGeyser collector object on top of VespeneGeyser object
 };
 
 #endif

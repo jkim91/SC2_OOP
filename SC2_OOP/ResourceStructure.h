@@ -21,10 +21,11 @@ public:
 	virtual ~ResourceStructure(); //destructor. destroys the meter, but type is not deleted.
 
 	//methods
-	virtual void subtract() = 0; //subtract from the current amount via default
-	void subtract(int request); //subtract from the current amount by requested
-	void giveResource(Worker &w); //give Resource object to Worker
-	virtual Resource* createResource() = 0; //create the appropriate resource (Factory Method)
+	virtual void giveResource(Worker &w, int request); //give Resource object to Worker with specified amount
+	
+	//abstract methods
+	virtual void giveResource(Worker &w) = 0; //give Resource object to Worker
+	virtual Resource* createResource(int request) = 0; //create the appropriate resource (Factory Method)
 	
 	//getters
 	Meter<int> getAmount(); //getter for amount meter
@@ -37,7 +38,9 @@ public:
 protected:
 	Meter<int> *amount; //amount of resource it currently has. (UNIQUE)
 	
-	static int STANDARD;
+	static int STANDARD; //Starting amount of resource for structure
+	static Meter<float> HEALTH_METER; //meter for HEALTH
+	static Armor ARMOR; //Armor for all ResourceStructures. All ResourceStructures are invulnerable
 };
 
 int ResourceStructure::STANDARD = 2500;

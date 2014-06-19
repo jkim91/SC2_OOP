@@ -1,18 +1,23 @@
 #include "VespeneGeyser.h"
-#include "Meter.h"
+#include "Resource.h"
+#include "GasCollector.h"
 
 VespeneGeyser::VespeneGeyser(){}
 VespeneGeyser::VespeneGeyser(VespeneGeyser &g) : ResourceStructure(g){}
 VespeneGeyser::~VespeneGeyser(){}
 
-void VespeneGeyser::subtract(){
-	amount->subtract(4);
+void VespeneGeyser::giveResource(Worker &w){
+	if (collector != NULL) ResourceStructure::giveResource(w, 4);
 }
 
-VespeneGeyserCollector* VespeneGeyser::getVespeneGeyserCollector(){
-	return collector;
+Resource* VespeneGeyser::createResource(int amount){
+	return new Resource(amount, Resource::GAS);
 }
 
-void VespeneGeyser::setVespeneGeyserCollector(VespeneGeyserCollector &g){
+GasCollector VespeneGeyser::getGasCollector(){
+	return *collector;
+}
+
+void VespeneGeyser::setGasCollector(GasCollector &g){
 	collector = &g;
 }

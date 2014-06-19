@@ -4,15 +4,18 @@
 
 #include "ResourceStructure.h"
 
+class Worker;
+
 class MineralField: public ResourceStructure
 {
 public:
 	MineralField();
 	MineralField(MineralField &m);
 	virtual ~MineralField();
-
+	
 	//methods
-	void subtract();
+	virtual void giveResource(Worker &w);
+	virtual Resource* createResource(int amount);
 };
 
 #endif
