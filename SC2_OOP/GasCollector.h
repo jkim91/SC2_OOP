@@ -4,25 +4,33 @@
 
 #include "GameObject.h"
 
-class Gas;
+class Geyser;
+class Worker;
 
 class GasCollector : public GameObject{
 public:
-	GasCollector(); //default constructor
-	GasCollector(GasCollector &g); //copy constructor
-	virtual ~GasCollector(); //destructor
+	//constructors and destructor
+	GasCollector(); //not to be used. GasCollector should not exist without geyser
+	GasCollector(Geyser &v);
+	GasCollector(GasCollector &g);
+	virtual ~GasCollector();
 
 	//methods
-	void subtract();
+	virtual void giveResource(Worker &w); //give resource from ResourceStructure to Worker
 
 	//getters
-	Gas* getGas();
+	Geyser getGeyser();
 
 	//setters
-	void setGas(Gas &g);
+	void setGeyser(Geyser &g);
 
 protected:
-	Gas *geyser;
+	Geyser *geyser;
+
+	static float SIGHT;
+	static Armor ARMOR;
 };
+
+float GasCollector::SIGHT = 9.0;
 
 #endif

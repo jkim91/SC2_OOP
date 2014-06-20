@@ -2,11 +2,11 @@
 #ifndef _VESPENE_GEYSER_H
 #define _VESPENE_GEYSER_H
 
-#include "ResourceStructure.h"
+#include "Geyser.h"
 
 class GasCollector;
 
-class VespeneGeyser : public ResourceStructure{
+class VespeneGeyser : public Geyser{
 public:
 	VespeneGeyser(); //default constructor
 	VespeneGeyser(VespeneGeyser &g); //copy constructor
@@ -16,14 +16,10 @@ public:
 	virtual void giveResource(Worker &w);
 	virtual Resource* createResource(int amount);
 
-	//getters
-	GasCollector getGasCollector();
-
-	//setters
-	void setGasCollector(GasCollector &g);
-
 protected:
-	GasCollector *collector; //VespeneGeyser collector object on top of VespeneGeyser object
+	static string NAME;
 };
+
+string VespeneGeyser::NAME = "Vespene Geyser";
 
 #endif

@@ -8,15 +8,15 @@ Armor ResourceStructure::ARMOR = Armor(true);
 Meter<float> ResourceStructure::HEALTH_METER = Meter<float>();
 
 ResourceStructure::ResourceStructure(){
-	amount = new Meter<int>(STANDARD);
+	sightRadius = &SIGHT;
+	attributes = &ATTRIBUTES;
 	health->setArmor(ARMOR);
 	health->setMeter(HEALTH_METER);
+	amount = new Meter<int>(STANDARD);
 }
 
 ResourceStructure::ResourceStructure(ResourceStructure &r) : GameObject(r){
 	amount = new Meter<int>(*r.amount);
-	health->setArmor(ARMOR);
-	health->setMeter(HEALTH_METER);
 }
 
 ResourceStructure::~ResourceStructure(){

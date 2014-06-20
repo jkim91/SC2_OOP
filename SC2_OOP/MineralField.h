@@ -16,6 +16,11 @@ public:
 	//methods
 	virtual void giveResource(Worker &w);
 	virtual Resource* createResource(int amount);
+
+protected:
+	static string NAME; //name of mineral field
 };
+
+string MineralField::NAME = "Mineral Field";
 
 #endif

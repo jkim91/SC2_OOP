@@ -41,8 +41,12 @@ protected:
 	static int STANDARD; //Starting amount of resource for structure
 	static Meter<float> HEALTH_METER; //meter for HEALTH
 	static Armor ARMOR; //Armor for all ResourceStructures. All ResourceStructures are invulnerable
+	static float SIGHT; //sight radius for all resource structures
+	static set<string> ATTRIBUTES; //attributes for all resource structures
 };
 
 int ResourceStructure::STANDARD = 2500;
+float ResourceStructure::SIGHT = 0.0;
+set<string> ResourceStructure::ATTRIBUTES = set<string>();
 
 #endif
