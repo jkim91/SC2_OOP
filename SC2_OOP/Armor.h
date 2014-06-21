@@ -14,10 +14,12 @@ public:
 	Armor(bool flag); //primitive constructor, with value and flag
 	Armor(Armor &a); //copy constructor (Deep copy)
 
-	float getVal(); //getter for value
+	//getters
+	float getVal() const; //getter for value
+	bool getIsInvulnerable() const; //getter for invulnerable
+	
+	//setters
 	void setVal(float val); //setter for val
-
-	bool getIsInvulnerable(); //getter for invulnerable
 	void setIsInvulnerable(bool flag); //setter for invulnerable
 
 protected:

@@ -14,8 +14,8 @@ Geyser::~Geyser(){
 	if (collector != NULL) delete collector;
 }
 
-GasCollector Geyser::getGasCollector(){
-	return *collector;
+GasCollector* Geyser::getGasCollector() const{
+	return collector;
 }
 
 void Geyser::setGasCollector(GasCollector &g){

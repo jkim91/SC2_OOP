@@ -5,11 +5,9 @@ VespeneGeyser::VespeneGeyser(){
 	name = &NAME;
 }
 
-VespeneGeyser::VespeneGeyser(VespeneGeyser &g) : Geyser(g){
-}
+VespeneGeyser::VespeneGeyser(VespeneGeyser &g) : Geyser(g){}
 
-VespeneGeyser::~VespeneGeyser(){
-}
+VespeneGeyser::~VespeneGeyser(){}
 
 void VespeneGeyser::giveResource(Worker &w){
 	if (collector != NULL) ResourceStructure::giveResource(w, 4);

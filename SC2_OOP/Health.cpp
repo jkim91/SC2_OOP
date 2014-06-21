@@ -23,12 +23,12 @@ Health::~Health(){
 	delete meter;
 }
 
-Meter<float> Health::getMeter(){
-	return *meter;
+Meter<float>* Health::getMeter() const{
+	return meter;
 }
 
-Armor Health::getArmor(){
-	return *armor;
+Armor* Health::getArmor() const{
+	return armor;
 }
 
 void Health::setMeter(Meter<float> &m){

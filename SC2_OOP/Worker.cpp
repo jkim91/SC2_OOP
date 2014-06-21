@@ -8,7 +8,8 @@ Worker::Worker(){
 }
 
 Worker::Worker(Worker &w){
-	res = new Resource(*w.res);
+	if(w.res != NULL) res = new Resource(*w.res);
+	else res = NULL;
 }
 
 Worker::~Worker(){
@@ -19,8 +20,8 @@ void Worker::gather(ResourceStructure &r){
 	r.giveResource(*this);
 }
 
-Resource Worker::getResource(){
-	return *res;
+Resource* Worker::getResource() const{
+	return res;
 }
 
 void Worker::setResource(Resource *res){

@@ -20,7 +20,7 @@ Armor::Armor(Armor &a){
 	setIsInvulnerable(a.getIsInvulnerable());
 }
 
-float Armor::getVal(){
+float Armor::getVal() const{
 	return val;
 }
 
@@ -28,7 +28,7 @@ void Armor::setVal(float val){
 	this->val = val;
 }
 
-bool Armor::getIsInvulnerable(){
+bool Armor::getIsInvulnerable() const{
 	return isInvulnerable;
 }
 

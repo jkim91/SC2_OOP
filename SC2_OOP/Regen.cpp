@@ -14,6 +14,11 @@ Regen<T>::Regen(float &val){
 }
 
 template<class T>
+Regen<T>::~Regen(){
+}
+
+
+template<class T>
 void Regen<T>::execute(Meter<T> &m){
 	while (!(m.isFull())){
 		m.add(rate);
@@ -31,11 +36,11 @@ void Regen<T>::execute(Meter<T> *m){
 }
 
 template<class T>
-Regen<T>::Regen(float &rate){
-	this->rate = rate;
+float Regen<T>::getRate() const{
+	return rate;
 }
 
 template<class T>
-Regen<T>::~Regen(){
+void Regen<T>::setRate(float rate){
+	this->rate = rate;
 }
-

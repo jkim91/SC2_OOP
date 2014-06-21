@@ -34,12 +34,12 @@ void Shield::resetCoolDown(){
 	reset = true;
 }
 
-Regen<float> Shield::getRegen(){
-	return *regen;
+Regen<float>* Shield::getRegen() const{
+	return regen;
 }
 
-Meter<float> Shield::getCoolDown(){
-	return *coolDown;
+Meter<float>* Shield::getCoolDown() const{
+	return coolDown;
 }
 
 void Shield::setRegen(Regen<float> &r){

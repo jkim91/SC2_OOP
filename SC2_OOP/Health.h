@@ -21,8 +21,8 @@ public:
 	void subtract(float amount); //subtract amount from health meter
 
 	//getters
-	Meter<float> getMeter();
-	Armor getArmor();
+	Meter<float>* getMeter() const;
+	Armor* getArmor() const;
 
 	//setters
 	void setMeter(Meter<float> &m);
