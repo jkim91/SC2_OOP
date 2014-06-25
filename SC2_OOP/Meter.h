@@ -25,8 +25,8 @@ public:
 	bool isFull(); //check if current is greater than or equal to max
 
 	//getters
-	T getCurrentValue(); //getter for current value, for GUI/debugging
-	T getMaxValue(); //getter for max value, for GUI/debugging
+	T* getCurrentValue() const; //getter for current value, for GUI/debugging
+	T* getMaxValue() const; //getter for max value, for GUI/debugging
 
 	//setters
 	void setCurrent(T val); //setter for current, does not create a new float.

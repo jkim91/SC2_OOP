@@ -4,6 +4,9 @@
 #include "Worker.h"
 #include "Health.h"
 
+int ResourceStructure::STANDARD = 2500;
+float ResourceStructure::SIGHT = 0.0;
+set<string> ResourceStructure::ATTRIBUTES = set<string>();
 Armor ResourceStructure::ARMOR = Armor(true);
 Meter<float> ResourceStructure::HEALTH_METER = Meter<float>();
 
@@ -28,16 +31,16 @@ void ResourceStructure::giveResource(Worker &w, int request){
 }
 
 
-Meter<int> ResourceStructure::getAmount(){
-	return *amount;
+Meter<int>* ResourceStructure::getAmount() const{
+	return amount;
 }
 
-int ResourceStructure::getCurrentAmount(){
-	return amount->getCurrentValue();
+int ResourceStructure::getCurrentAmount() const{
+	return *amount->getCurrentValue();
 }
 
-int ResourceStructure::getMaxAmount(){
-	return amount->getMaxValue();
+int ResourceStructure::getMaxAmount() const{
+	return *amount->getMaxValue();
 }
 
 void ResourceStructure::setAmount(Meter<int> &m){

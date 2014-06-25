@@ -28,9 +28,9 @@ public:
 	virtual Resource* createResource(int request) = 0; //create the appropriate resource (Factory Method)
 	
 	//getters
-	Meter<int> getAmount(); //getter for amount meter
-	int getMaxAmount(); //getter for max amount value
-	int getCurrentAmount(); //getter for current amount value
+	Meter<int> *getAmount() const; //getter for amount meter
+	int getMaxAmount() const; //getter for max amount value
+	int getCurrentAmount() const; //getter for current amount value
 
 	//setters
 	void setAmount(Meter<int> &m); //setter for amount
@@ -44,9 +44,5 @@ protected:
 	static float SIGHT; //sight radius for all resource structures
 	static set<string> ATTRIBUTES; //attributes for all resource structures
 };
-
-int ResourceStructure::STANDARD = 2500;
-float ResourceStructure::SIGHT = 0.0;
-set<string> ResourceStructure::ATTRIBUTES = set<string>();
 
 #endif

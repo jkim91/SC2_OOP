@@ -20,7 +20,7 @@ public:
 	virtual void dropOff(ResourceCenter &g) = 0; //drop the resource fragment at a gather center
 
 	//getter
-	Resource getResource();
+	Resource* getResource() const;
 
 	//setter
 	void setResource(Resource *res);

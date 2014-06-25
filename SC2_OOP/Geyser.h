@@ -17,13 +17,13 @@ public:
 	virtual Resource* createResource(int amount) = 0;
 
 	//getters
-	GasCollector getGasCollector();
+	GasCollector* getGasCollector() const;
 
 	//setters
 	void setGasCollector(GasCollector &g);
 
 protected:
-	GasCollector *collector; //VespeneGeyser collector object on top of VespeneGeyser object
+	GasCollector* collector; //VespeneGeyser collector object on top of VespeneGeyser object
 
 };
 

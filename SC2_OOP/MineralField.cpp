@@ -5,9 +5,10 @@
 MineralField::MineralField(){
 	name = &NAME;
 }
+
 MineralField::MineralField(MineralField &m) : ResourceStructure(m){}
-MineralField::~MineralField(){
-}
+
+MineralField::~MineralField(){}
 
 void MineralField::giveResource(Worker &w){
 	ResourceStructure::giveResource(w, 5);

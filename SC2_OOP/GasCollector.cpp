@@ -12,7 +12,7 @@ GasCollector::GasCollector(){
 
 GasCollector::GasCollector(Geyser &g){
 	sightRadius = &SIGHT;
-	*geyser = g;
+	geyser = &g;
 	g.setGasCollector(*this);
 }
 
@@ -20,6 +20,14 @@ GasCollector::GasCollector(GasCollector &g) : GameObject(g){
 	sightRadius = &SIGHT;
 	geyser = g.geyser;
 	g.geyser->setGasCollector(*this);	
+}
+
+GasCollector::GasCollector(GasCollector &g) : GameObject(g){
+	sightRadius = g.sightRadius;
+	setGeyser(*g.geyser);
+}
+
+GasCollector::~GasCollector(){
 }
 
 void GasCollector::giveResource(Worker &w){
@@ -31,5 +39,5 @@ Geyser* GasCollector::getGeyser() const{
 }
 
 void GasCollector::setGeyser(Geyser &g){
-	*geyser = g;
+	geyser = &g;
 }

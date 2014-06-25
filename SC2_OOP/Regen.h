@@ -21,7 +21,7 @@ public:
 	void execute(Meter<T> *m); //execute regeneration
 
 	//getter
-	float getRate(); //get the value of rate
+	float getRate() const; //get the value of rate
 
 	//setter
 	void setRate(float rate); //set the rate to a value

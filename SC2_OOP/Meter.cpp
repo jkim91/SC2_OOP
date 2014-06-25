@@ -35,18 +35,18 @@ void Meter<T>::subtract(T amount){
 }
 
 template<class T>
-T Meter<T>::getMaxValue(){
-	return *max;
-}
-
-template<class T>
 bool Meter<T>::isFull(){
 	return (*current >= *max);
 }
 
 template<class T>
-T Meter<T>::getCurrentValue(){
-	return *current;
+T* Meter<T>::getMaxValue() const{
+	return max;
+}
+
+template<class T>
+T* Meter<T>::getCurrentValue() const{
+	return current;
 }
 
 template<class T>
