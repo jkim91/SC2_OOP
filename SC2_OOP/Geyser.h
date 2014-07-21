@@ -2,6 +2,10 @@
 #ifndef _GEYSER_H
 #define _GEYSER_H
 
+/*
+Explanation: Geyser is a ResourceStructure that REQUIRES a GasCollector for a Worker to obtain Resource.
+*/
+
 #include "ResourceStructure.h"
 
 class GasCollector;

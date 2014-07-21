@@ -2,6 +2,11 @@
 #ifndef _GAS_COLLECTOR_H
 #define _GAS_COLLECTOR_H
 
+/*
+Explanation: GasCollector is a "skin" for Geyser. GasCollector cannot exist without a Geyser. Has its own sight and armor.
+*/
+
+
 #include "GameObject.h"
 
 class Geyser;

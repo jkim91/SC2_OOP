@@ -31,20 +31,8 @@
     <Filter Include="Header Files\Offense">
       <UniqueIdentifier>{bc53d6e9-38b6-4feb-bd4f-26ccfd411a00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Objects\Resource">
+    <Filter Include="Header Files\Resource">
       <UniqueIdentifier>{708053c9-94d4-43ae-a100-7f8baa61f702}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Objects\Resource\ResourceFragment">
-      <UniqueIdentifier>{be0a4bde-9bba-46df-b621-951d90690ff1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Objects\Resource\Source">
-      <UniqueIdentifier>{3d338902-5d13-498a-a32e-5bf43a43f918}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Objects\Resource\Add-on">
-      <UniqueIdentifier>{da4d9358-c1b4-4842-87cc-dbc85c498004}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Objects\Resource\Destination">
-      <UniqueIdentifier>{d006c76a-304c-4f6d-b3e7-a7ea24ecce9b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,9 +66,6 @@
     <ClInclude Include="Rotation.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Physics.h">
-      <Filter>Header Files\Geometry</Filter>
-    </ClInclude>
     <ClInclude Include="Shield.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
@@ -108,38 +93,38 @@
     <ClInclude Include="Builder.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Combat.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Lift.h">
       <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files\Objects\Resource\ResourceFragment</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceStructure.h">
-      <Filter>Header Files\Objects\Resource\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="MineralField.h">
-      <Filter>Header Files\Objects\Resource\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="GasCollector.h">
-      <Filter>Header Files\Objects\Resource\Add-on</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
-      <Filter>Header Files\Objects\Resource\Destination</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceCenter.h">
-      <Filter>Header Files\Objects\Resource\Destination</Filter>
     </ClInclude>
     <ClInclude Include="Kinematics_2D.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
+    <ClInclude Include="GasCollector.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceCenter.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
     <ClInclude Include="Geyser.h">
-      <Filter>Header Files\Objects\Resource\Source</Filter>
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="MineralField.h">
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceStructure.h">
+      <Filter>Header Files\Resource</Filter>
     </ClInclude>
     <ClInclude Include="VespeneGeyser.h">
-      <Filter>Header Files\Objects\Resource\Source</Filter>
+      <Filter>Header Files\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Combat.h">
+      <Filter>Header Files\Offense</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

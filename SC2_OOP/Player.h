@@ -3,24 +3,26 @@
 #define _PLAYER_H
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
 class World;
+class GameObject;
 
 class Player{
-private:
-protected:
-	World *world;
 public:
 	Player();
 	Player(string race);
 	~Player();
 
-	static const string ZERG;
-	static const string TERRAN;
-	static const string PROTOSS;
+protected:
+	World *world;
+	vector<GameObject*> objects;
 
+	static string ZERG;
+	static string TERRAN;
+	static string PROTOSS;
 };
 
 #endif

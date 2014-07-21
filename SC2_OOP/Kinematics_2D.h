@@ -2,6 +2,10 @@
 #ifndef _KINEMATICS_2D_H
 #define _KINEMATICS_2D_H
 
+/*
+Explanation: Handles 2D-kinematics of a GameObject
+*/
+
 class Kinematics_2D{
 public:
 	Kinematics_2D();
