@@ -43,7 +43,8 @@ int ResourceStructure::getMaxAmount() const{
 	return *amount->getMaxValue();
 }
 
-void ResourceStructure::setAmount(Meter<int> &m){
+void ResourceStructure::setAmount(Meter<int> *m){
 	if (amount != NULL) delete amount;
-	amount = new Meter<int>(m);
+	if (m == NULL) amount = NULL;
+	else amount = new Meter<int>(*m);
 }

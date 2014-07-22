@@ -25,11 +25,16 @@ public:
 	bool isFull(); //check if current is greater than or equal to max
 
 	//getters
-	T* getCurrentValue() const; //getter for current value, for GUI/debugging
-	T* getMaxValue() const; //getter for max value, for GUI/debugging
+	T getCurrent(); //getter for current value, for GUI/debugging
+	T getMax(); //getter for max value, for GUI/debugging
+
+	//accessors
+	T* accessCurrent();
+	T* accessMax();
 
 	//setters
 	void setCurrent(T val); //setter for current, does not create a new float.
+	void setMax(T &val);
 	void setCurrentToMax(); //set the current to max value		
 
 protected:

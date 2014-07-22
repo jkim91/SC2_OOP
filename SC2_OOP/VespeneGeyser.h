@@ -20,6 +20,4 @@ protected:
 	static string NAME;
 };
 
-string VespeneGeyser::NAME = "Vespene Geyser";
-
 #endif

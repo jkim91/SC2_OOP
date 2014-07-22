@@ -24,7 +24,7 @@ public:
 	GasCollector* getGasCollector() const;
 
 	//setters
-	void setGasCollector(GasCollector &g);
+	void setGasCollector(GasCollector *g);
 
 protected:
 	GasCollector* collector; //VespeneGeyser collector object on top of VespeneGeyser object

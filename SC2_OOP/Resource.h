@@ -9,7 +9,7 @@
 class Resource{
 public:
 	Resource();
-	Resource(int amount, int &type);
+	Resource(int amount, const int &type);
 	Resource(Resource &r);
 	virtual ~Resource();
 
@@ -19,15 +19,16 @@ public:
 
 	//setters
 	void setAmount(int amount);
-	void setType(int &type);
+	void setType(const int &type);
+
+	//constants
+	static const int MINERAL;
+	static const int GAS;
 
 protected:
 	int amount; //amount of resource (UNIQUE)
 	const int *type; //type of resource (SHARED)
 
-	//constants
-	static int MINERAL;
-	static int GAS;
 };
 
 #endif

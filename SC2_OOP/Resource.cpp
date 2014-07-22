@@ -1,14 +1,14 @@
 #include "Resource.h"
 
-int Resource::MINERAL = 0;
-int Resource::GAS = 1;
+const int Resource::MINERAL = 0;
+const int Resource::GAS = 1;
 
 Resource::Resource(){
 	amount = 0;
 	type = 0;
 }
 
-Resource::Resource(int amount, int &type){
+Resource::Resource(int amount,const int &type){
 	this->amount = amount;
 	this->type = &type;
 }
@@ -33,6 +33,6 @@ void Resource::setAmount(int amount){
 	this->amount = amount;
 }
 
-void Resource::setType(int &type){
+void Resource::setType(const int &type){
 	this->type = &type;
 }

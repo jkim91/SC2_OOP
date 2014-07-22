@@ -18,6 +18,6 @@ GasCollector* Geyser::getGasCollector() const{
 	return collector;
 }
 
-void Geyser::setGasCollector(GasCollector &g){
-	collector = &g;
+void Geyser::setGasCollector(GasCollector *g){
+	collector = g;
 }

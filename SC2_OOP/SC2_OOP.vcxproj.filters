@@ -16,9 +16,6 @@
     <Filter Include="Header Files\Objects">
       <UniqueIdentifier>{0cc43390-a830-4750-aaa0-9277dc98dfab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Abilities">
-      <UniqueIdentifier>{fef6ab71-c3dc-49c7-aebd-455f0ad17c06}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Geometry">
       <UniqueIdentifier>{d9ab5dda-22a9-4c16-85fe-4ec68c79bc2a}</UniqueIdentifier>
     </Filter>
@@ -31,8 +28,11 @@
     <Filter Include="Header Files\Offense">
       <UniqueIdentifier>{bc53d6e9-38b6-4feb-bd4f-26ccfd411a00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Resource">
+    <Filter Include="Header Files\Resource Supply Chain">
       <UniqueIdentifier>{708053c9-94d4-43ae-a100-7f8baa61f702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Interfaces">
+      <UniqueIdentifier>{fef6ab71-c3dc-49c7-aebd-455f0ad17c06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,7 +46,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ability.h">
-      <Filter>Header Files\Abilities</Filter>
+      <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Header Files\Objects</Filter>
@@ -90,41 +90,41 @@
     <ClInclude Include="Health.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
-    <ClInclude Include="Builder.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Lift.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Kinematics_2D.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
     <ClInclude Include="GasCollector.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="ResourceCenter.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="Worker.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="Geyser.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="MineralField.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="ResourceStructure.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="VespeneGeyser.h">
-      <Filter>Header Files\Resource</Filter>
+      <Filter>Header Files\Resource Supply Chain</Filter>
     </ClInclude>
     <ClInclude Include="Combat.h">
       <Filter>Header Files\Offense</Filter>
+    </ClInclude>
+    <ClInclude Include="Lift.h">
+      <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Builder.h">
+      <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

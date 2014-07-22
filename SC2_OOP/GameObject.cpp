@@ -33,31 +33,59 @@ void GameObject::subHealth(float amount){
 	health->subtract(amount);
 }
 
-string* GameObject::getName() const{
-	return name;
+string GameObject::getName(){
+	return *name;
 }
 
-bool* GameObject::getGroundStatus() const{
-	return groundStatus;
+bool GameObject::getGroundStatus(){
+	return *groundStatus;
 }
 
-float* GameObject::getSightRadius() const{
-	return sightRadius;
+float GameObject::getSightRadius(){
+	return *sightRadius;
 }
 
-Health* GameObject::getHealth() const{
-	return health;
+Health GameObject::getHealth(){
+	return *health;
 }
 
-Armor* GameObject::getArmor() const{
+Armor GameObject::getArmor(){
 	return health->getArmor();
 }
 
-set<string>* GameObject::getAttributes() const{
+set<string> GameObject::getAttributes(){
+	return *attributes;
+}
+
+Player GameObject::getPlayer(){
+	return *player;
+}
+
+string* GameObject::accessName(){
+	return name;
+}
+
+bool* GameObject::accessGroundStatus(){
+	return groundStatus;
+}
+
+float* GameObject::accessSightRadius(){
+	return sightRadius;
+}
+
+Health* GameObject::accessHealth(){
+	return health;
+}
+
+Armor* GameObject::accessArmor(){
+	return health->accessArmor();
+}
+
+set<string>* GameObject::accessAttributes(){
 	return attributes;
 }
 
-Player* GameObject::getPlayer() const{
+Player* GameObject::accessPlayer(){
 	return player;
 }
 

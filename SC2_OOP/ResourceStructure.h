@@ -28,12 +28,12 @@ public:
 	virtual Resource* createResource(int request) = 0; //create the appropriate resource (Factory Method)
 	
 	//getters
-	Meter<int> *getAmount() const; //getter for amount meter
+	Meter<int>* getAmount() const; //getter for amount meter
 	int getMaxAmount() const; //getter for max amount value
 	int getCurrentAmount() const; //getter for current amount value
 
 	//setters
-	void setAmount(Meter<int> &m); //setter for amount
+	void setAmount(Meter<int> *m); //setter for amount
 	
 protected:
 	Meter<int> *amount; //amount of resource it currently has. (UNIQUE)

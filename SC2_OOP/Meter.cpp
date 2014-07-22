@@ -40,18 +40,33 @@ bool Meter<T>::isFull(){
 }
 
 template<class T>
-T* Meter<T>::getMaxValue() const{
-	return max;
+T Meter<T>::getCurrent() const{
+	return *current;
 }
 
 template<class T>
-T* Meter<T>::getCurrentValue() const{
+T Meter<T>::getMax() const{
+	return *max;
+}
+
+template<class T>
+T* Meter<T>::accessCurrent() const{
 	return current;
 }
 
 template<class T>
+T* Meter<T>::accessMax() const{
+	return max;
+}
+
+template<class T>
 void Meter<T>::setCurrent(T val){
-	*current = new T(val);
+	current = new T(val);
+}
+
+template<class T>
+void Meter<T>::setCurrentToMax(T &val){
+	max = &val;
 }
 
 template<class T>

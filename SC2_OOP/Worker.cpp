@@ -16,8 +16,8 @@ Worker::~Worker(){
 	if (res != NULL) delete res;
 }
 
-void Worker::gather(ResourceStructure &r){
-	r.giveResource(*this);
+void Worker::gather(ResourceStructure *r){
+	r->giveResource(*this);
 }
 
 Resource* Worker::getResource() const{

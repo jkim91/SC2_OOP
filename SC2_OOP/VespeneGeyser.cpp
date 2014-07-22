@@ -1,6 +1,8 @@
 #include "VespeneGeyser.h"
 #include "Resource.h"
 
+string VespeneGeyser::NAME = "Vespene Geyser";
+
 VespeneGeyser::VespeneGeyser(){
 	name = &NAME;
 }

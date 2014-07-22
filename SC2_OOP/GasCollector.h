@@ -24,7 +24,7 @@ public:
 	virtual void giveResource(Worker &w); //give resource from ResourceStructure to Worker
 
 	//getters
-	Geyser* getGeyser() const;
+	Geyser* getGeyser();
 
 	//setters
 	void setGeyser(Geyser &g);

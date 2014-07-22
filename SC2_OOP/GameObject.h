@@ -35,14 +35,23 @@ public:
 	virtual void subHealth(float amount); //subtract from the object's current health
 
 	//getters
-	string* getName() const; //getter for name
-	bool* getGroundStatus() const; //getter for status 
-	float* getSightRadius() const; //getter for sight radius
-	Health* getHealth() const; //getter for health
-	Armor* getArmor() const; //getter for armor
-	set<string>* getAttributes() const; //getter for all attributes
-	Player* getPlayer() const; //getter for player
+	string getName(); //getter for name
+	bool getGroundStatus(); //getter for status 
+	float getSightRadius(); //getter for sight radius
+	Health getHealth(); //getter for health
+	Armor getArmor(); //getter for armor
+	set<string> getAttributes(); //getter for all attributes
+	Player getPlayer(); //getter for player
 	
+	//accessors (not recommended to use)
+	string* accessName();
+	bool* accessGroundStatus();
+	float* accessSightRadius();
+	Health* accessHealth();
+	Armor* accessArmor();
+	set<string>* accessAttributes();
+	Player* accessPlayer();
+
 	//setters	
 	void setName(string &name); //setter for name
 	void setSightRadius(float &sightRadius); //set the radius to a new value

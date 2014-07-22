@@ -13,11 +13,11 @@ public:
 	virtual ~Worker(); //destructor
 
 	//methods
-	virtual void gather(ResourceStructure &r); //gather from a resource and obtain a resource fragment
+	virtual void gather(ResourceStructure *r); //gather from a resource and obtain a resource fragment
 	
 	//abstract methods
 	virtual void returnCargo() = 0; //return cargo to nearest ResourceCenter, if possible
-	virtual void dropOff(ResourceCenter &g) = 0; //drop the resource fragment at a gather center
+	virtual void dropOff(ResourceCenter *g) = 0; //drop the resource fragment at a gather center
 
 	//getter
 	Resource* getResource() const;
