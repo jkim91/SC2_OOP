@@ -7,7 +7,21 @@ class Weapon;
 
 class Combat{
 public:
-	virtual void attack(GameObject *g) = 0;
+	Combat();
+	Combat(Combat &c);
+	~Combat();
+
+	//functions
+	virtual void attack(GameObject *g);
+
+	//getters
+	Weapon* getWeapon();
+
+	//setters
+	void setWeapon(Weapon &w);
+
+protected:
+	Weapon* weapon; //weapon for a Combat object (SHARED)
 };
 
 #endif

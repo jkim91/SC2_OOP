@@ -23,19 +23,11 @@ Health::~Health(){
 	delete meter;
 }
 
-Meter<float> Health::getMeter(){
-	return *meter;
-}
-
-Armor Health::getArmor(){
-	return *armor;
-}
-
-Meter<float>* Health::accessMeter(){
+Meter<float>* Health::getMeter(){
 	return meter;
 }
 
-Armor* Health::accessArmor(){
+Armor* Health::getArmor(){
 	return armor;
 }
 

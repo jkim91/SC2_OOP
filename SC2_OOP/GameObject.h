@@ -33,25 +33,19 @@ public:
 	//methods
 	virtual void addHealth(float amount); //add to the object's current health
 	virtual void subHealth(float amount); //subtract from the object's current health
+	string getNameValue();
+	bool getGroundStatusValue();
+	float getSightRadiusValue();
 
 	//getters
-	string getName(); //getter for name
-	bool getGroundStatus(); //getter for status 
-	float getSightRadius(); //getter for sight radius
-	Health getHealth(); //getter for health
-	Armor getArmor(); //getter for armor
-	set<string> getAttributes(); //getter for all attributes
-	Player getPlayer(); //getter for player
+	string* getName(); //getter for name
+	bool* getGroundStatus(); //getter for status 
+	float* getSightRadius(); //getter for sight radius
+	Health* getHealth(); //getter for health
+	Armor* getArmor(); //getter for armor
+	set<string>* getAttributes(); //getter for all attributes
+	Player* getPlayer(); //getter for player
 	
-	//accessors (not recommended to use)
-	string* accessName();
-	bool* accessGroundStatus();
-	float* accessSightRadius();
-	Health* accessHealth();
-	Armor* accessArmor();
-	set<string>* accessAttributes();
-	Player* accessPlayer();
-
 	//setters	
 	void setName(string &name); //setter for name
 	void setSightRadius(float &sightRadius); //set the radius to a new value
@@ -86,17 +80,5 @@ protected:
 	static string PSIONIC;
 	static string STRUCTURE;
 };
-
-bool GameObject::GROUND = 0;
-bool GameObject::AIR = 1;
-
-string GameObject::LIGHT = "Light";
-string GameObject::ARMORED = "Armored";
-string GameObject::BIO = "Biological";
-string GameObject::MECH = "Mechanical";
-string GameObject::DETECTOR = "Detector";
-string GameObject::MASSIVE = "Massive";
-string GameObject::PSIONIC = "Psionic";
-string GameObject::STRUCTURE = "Structure";
 
 #endif

@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="Combat.cpp" />
     <ClCompile Include="FusionCutter.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Kinematics_2D.cpp" />

@@ -3,6 +3,19 @@
 #include "Armor.h"
 #include "Player.h"
 
+
+bool GameObject::GROUND = 0;
+bool GameObject::AIR = 1;
+
+string GameObject::LIGHT = "Light";
+string GameObject::ARMORED = "Armored";
+string GameObject::BIO = "Biological";
+string GameObject::MECH = "Mechanical";
+string GameObject::DETECTOR = "Detector";
+string GameObject::MASSIVE = "Massive";
+string GameObject::PSIONIC = "Psionic";
+string GameObject::STRUCTURE = "Structure";
+
 GameObject::GameObject(){
 	name = NULL;
 	groundStatus = &GROUND;
@@ -16,7 +29,7 @@ GameObject::GameObject(GameObject &g){
 	name = g.name;
 	groundStatus = g.groundStatus;
 	sightRadius = g.sightRadius;
-	health = new Health(g.getHealth());
+	health = new Health(*g.health);
 	attributes = g.attributes;
 	player = g.player;
 }
@@ -33,59 +46,43 @@ void GameObject::subHealth(float amount){
 	health->subtract(amount);
 }
 
-string GameObject::getName(){
+string GameObject::getNameValue(){
 	return *name;
 }
 
-bool GameObject::getGroundStatus(){
+bool GameObject::getGroundStatusValue(){
 	return *groundStatus;
 }
 
-float GameObject::getSightRadius(){
+float GameObject::getSightRadiusValue(){
 	return *sightRadius;
 }
 
-Health GameObject::getHealth(){
-	return *health;
-}
-
-Armor GameObject::getArmor(){
-	return health->getArmor();
-}
-
-set<string> GameObject::getAttributes(){
-	return *attributes;
-}
-
-Player GameObject::getPlayer(){
-	return *player;
-}
-
-string* GameObject::accessName(){
+string* GameObject::getName(){
 	return name;
 }
 
-bool* GameObject::accessGroundStatus(){
+bool* GameObject::getGroundStatus(){
 	return groundStatus;
 }
 
-float* GameObject::accessSightRadius(){
+float* GameObject::getSightRadius(){
 	return sightRadius;
 }
 
-Health* GameObject::accessHealth(){
+Health* GameObject::getHealth(){
 	return health;
 }
 
-Armor* GameObject::accessArmor(){
-	return health->accessArmor();
+Armor* GameObject::getArmor(){
+	return health->getArmor();
 }
 
-set<string>* GameObject::accessAttributes(){
+set<string>* GameObject::getAttributes(){
 	return attributes;
 }
 
-Player* GameObject::accessPlayer(){
+Player* GameObject::getPlayer(){
 	return player;
 }
 

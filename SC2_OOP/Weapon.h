@@ -3,43 +3,41 @@
 #define _WEAPON_H
 
 #include <string>
-#include "Ability.h"
 
 using namespace std;
 
-class GameObject;
-class Combat;
-
 class Weapon{
 public:
+	Weapon();
 	~Weapon();
 
-	virtual void attack(GameObject *g) = 0;
-	virtual void attackAnimation() = 0;
+	//functions
+	string getNameValue();
+	float getDamageValue(); //get damage value
+	float getModifierValue(); //get modifier value
+	float getRangeValue();
+	float getCooldownValue();
 
 	//getters
-	string getName();
-	int getDamage();
-	int getRange();
-	float getCooldown();
-	int getTargetType();
-	Combat *getOwner();
+	string* getName();
+	float* getDamage();
+	float* getModifier();
+	float* getRange();
+	float* getCooldown();
 
 	//setters
 	void setName(string &name);
-	void setDamage(int &damage);
-	void setRange(int &range);
+	void setDamage(float &damage);
+	void setModifier(float &modifier);
+	void setRange(float &range);
 	void setCooldown(float &cooldown);
-	void setTargetType(int &targetType);
-	void setOwner(Combat &owner);
 
 protected:
-	string *name; //name of weapon (UNIQUE)
-	int *damage; //damage of weapon (UNIQUE)
-	int *range; //range of weapon (UNIQUE)
-	float *cooldown; //cooldown of weapon (UNIQUE)
-	const int *targetType; //target type of weapon (UNIQUE)
-	Combat *owner; //combat object that owns (UNIQUE)
+	string *name; //name of weapon (SHARED)
+	float *damage; //damage of weapon (SHARED)
+	float *modifier; //damage modifier of weapon via upgrade (SHARED)
+	float *range; //range of weapon (SHARED)
+	float *cooldown; //cooldown of weapon (SHARED)
 };
 
 #endif

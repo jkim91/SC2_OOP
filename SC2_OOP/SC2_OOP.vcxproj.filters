@@ -34,6 +34,18 @@
     <Filter Include="Header Files\Interfaces">
       <UniqueIdentifier>{fef6ab71-c3dc-49c7-aebd-455f0ad17c06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Resource Supply Chain\Source">
+      <UniqueIdentifier>{4bd833f4-16ad-447f-8934-8488c7bf9c35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resource Supply Chain\Destination">
+      <UniqueIdentifier>{16a86302-c856-4499-9f03-1a6422d8d77f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resource Supply Chain\Cargo">
+      <UniqueIdentifier>{e3822994-490d-4c14-b79a-914fddbbb37d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resource Supply Chain\Transport">
+      <UniqueIdentifier>{0f78c376-1945-49e1-be73-6a49b0f94b3f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -93,30 +105,6 @@
     <ClInclude Include="Kinematics_2D.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="GasCollector.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceCenter.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="Geyser.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="MineralField.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceStructure.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
-    <ClInclude Include="VespeneGeyser.h">
-      <Filter>Header Files\Resource Supply Chain</Filter>
-    </ClInclude>
     <ClInclude Include="Combat.h">
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
@@ -125,6 +113,30 @@
     </ClInclude>
     <ClInclude Include="Builder.h">
       <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Geyser.h">
+      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="MineralField.h">
+      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceStructure.h">
+      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="VespeneGeyser.h">
+      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="GasCollector.h">
+      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceCenter.h">
+      <Filter>Header Files\Resource Supply Chain\Destination</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files\Resource Supply Chain\Cargo</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Header Files\Resource Supply Chain\Transport</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +198,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Unit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Combat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

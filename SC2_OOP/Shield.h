@@ -22,12 +22,8 @@ public:
 	void resetCoolDown(); //reset the cooldown
 
 	//getters
-	Regen<float> getRegen();
-	Meter<float> getCoolDown();
-
-	//accessors
-	Regen<float>* accessRegen();
-	Meter<float>* accessCoolDown();
+	Regen<float>* getRegen();
+	Meter<float>* getCoolDown();
 
 	//setters
 	void setRegen(Regen<float> &r);

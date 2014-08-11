@@ -23,14 +23,12 @@ public:
 
 	//functions
 	bool isFull(); //check if current is greater than or equal to max
+	T getCurrentValue();
+	T getMaxValue();
 
 	//getters
-	T getCurrent(); //getter for current value, for GUI/debugging
-	T getMax(); //getter for max value, for GUI/debugging
-
-	//accessors
-	T* accessCurrent();
-	T* accessMax();
+	T* getCurrent(); //getter for current value, for GUI/debugging
+	T* getMax(); //getter for max value, for GUI/debugging
 
 	//setters
 	void setCurrent(T val); //setter for current, does not create a new float.
