@@ -83,7 +83,6 @@
     <ClInclude Include="Armor.h" />
     <ClInclude Include="Builder.h" />
     <ClInclude Include="Combat.h" />
-    <ClInclude Include="FusionCutter.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="ProtossPlayer.h" />
     <ClInclude Include="TerranPlayer.h" />
@@ -115,7 +114,6 @@
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Combat.cpp" />
-    <ClCompile Include="FusionCutter.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Kinematics_2D.cpp" />
     <ClCompile Include="Resource.cpp" />

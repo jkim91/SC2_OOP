@@ -90,9 +90,6 @@
     <ClInclude Include="SCV.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="FusionCutter.h">
-      <Filter>Header Files\Offense</Filter>
-    </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
@@ -183,9 +180,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FusionCutter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
