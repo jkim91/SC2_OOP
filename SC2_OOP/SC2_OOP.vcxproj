@@ -85,6 +85,9 @@
     <ClInclude Include="Combat.h" />
     <ClInclude Include="FusionCutter.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="ProtossPlayer.h" />
+    <ClInclude Include="TerranPlayer.h" />
+    <ClInclude Include="ZergPlayer.h" />
     <ClInclude Include="Kinematics_2D.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Geyser.h" />

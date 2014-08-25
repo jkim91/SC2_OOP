@@ -33,14 +33,16 @@ public:
 	//methods
 	virtual void addHealth(float amount); //add to the object's current health
 	virtual void subHealth(float amount); //subtract from the object's current health
-	string getNameValue();
-	bool getGroundStatusValue();
-	float getSightRadiusValue();
+	string getNameValue(); //return name by value
+	bool getGroundStatusValue(); //return ground status by value
+	float getSightRadiusValue(); //return sight radius by value
+	int getSupplyValue(); //return supply by value
 
 	//getters
 	string* getName(); //getter for name
 	bool* getGroundStatus(); //getter for status 
 	float* getSightRadius(); //getter for sight radius
+	int* getSupply(); //getter for supply
 	Health* getHealth(); //getter for health
 	Armor* getArmor(); //getter for armor
 	set<string>* getAttributes(); //getter for all attributes
@@ -50,10 +52,11 @@ public:
 	void setName(string &name); //setter for name
 	void setSightRadius(float &sightRadius); //set the radius to a new value
 	void setGroundStatus(bool &status); //set ground status
+	void setSupply(int &supply); //set supply amount
 	void setHealth(Health &h); //setter for health
 	void setArmor(Armor &a); //setter for armor
 	void setAttributes(set<string> &s); //setter for attributes
-	void linkToPlayer(Player &owner); //link to a player
+	void setPlayer(Player &owner); //link to a player
 	
 	//geometry-related objects. all public
 	Transform *transform; //object's transform (UNIQUE)
@@ -62,6 +65,7 @@ protected:
 	string *name; //name of the object, usually the class name (SHARED)
 	bool *groundStatus; //status for on the ground or air (SHARED)
 	float *sightRadius; //sight radius for what the object can "see" (SHARED)
+	int* supply; //amount of supply needed for object to exist (SHARED)
 	Health *health; // health of gameObject (UNIQUE)
 	set<string> *attributes; //set of string attributes (SHARED)
 	Player *player; //player that owns this gameobject (SHARED)

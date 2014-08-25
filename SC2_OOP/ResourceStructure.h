@@ -42,6 +42,7 @@ protected:
 	static Meter<float> HEALTH_METER; //meter for HEALTH
 	static Armor ARMOR; //Armor for all ResourceStructures. All ResourceStructures are invulnerable
 	static float SIGHT; //sight radius for all resource structures
+	static int SUPPLY; //supply amount for all resource structures
 	static set<string> ATTRIBUTES; //attributes for all resource structures
 };
 

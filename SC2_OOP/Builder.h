@@ -5,7 +5,7 @@
 class Builder{
 public:
 	Builder();
-	virtual void build(string &hash) = 0;
+	virtual void build(string hash) = 0;
 };
 
 #endif

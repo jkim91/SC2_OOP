@@ -20,6 +20,7 @@ GameObject::GameObject(){
 	name = NULL;
 	groundStatus = &GROUND;
 	sightRadius = NULL;
+	supply = NULL;
 	health = new Health();
 	attributes = NULL;
 	player = NULL;
@@ -29,6 +30,7 @@ GameObject::GameObject(GameObject &g){
 	name = g.name;
 	groundStatus = g.groundStatus;
 	sightRadius = g.sightRadius;
+	supply = g.supply;
 	health = new Health(*g.health);
 	attributes = g.attributes;
 	player = g.player;
@@ -58,6 +60,10 @@ float GameObject::getSightRadiusValue(){
 	return *sightRadius;
 }
 
+int GameObject::getSupplyValue(){
+	return *supply;
+}
+
 string* GameObject::getName(){
 	return name;
 }
@@ -68,6 +74,10 @@ bool* GameObject::getGroundStatus(){
 
 float* GameObject::getSightRadius(){
 	return sightRadius;
+}
+
+int* GameObject::getSupply(){
+	return supply;
 }
 
 Health* GameObject::getHealth(){
@@ -99,6 +109,10 @@ void GameObject::setGroundStatus(bool &status){
 	groundStatus = &status;
 }
 
+void GameObject::setSupply(int &supply){
+	this->supply = &supply;
+}
+
 void GameObject::setHealth(Health &h){
 	if (health != NULL) delete health;
 	health = new Health(h);
@@ -113,7 +127,7 @@ void GameObject::setAttributes(set<string> &s){
 	attributes = &s;
 }
 
-void GameObject::linkToPlayer(Player &p){
+void GameObject::setPlayer(Player &p){
 	player = &p;
 }
 

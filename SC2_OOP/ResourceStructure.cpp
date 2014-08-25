@@ -6,6 +6,7 @@
 
 int ResourceStructure::STANDARD = 2500;
 float ResourceStructure::SIGHT = 0.0;
+int ResourceStructure::SUPPLY = 0;
 set<string> ResourceStructure::ATTRIBUTES = set<string>();
 Armor ResourceStructure::ARMOR = Armor(true);
 Meter<float> ResourceStructure::HEALTH_METER = Meter<float>();
@@ -13,6 +14,7 @@ Meter<float> ResourceStructure::HEALTH_METER = Meter<float>();
 ResourceStructure::ResourceStructure(){
 	sightRadius = &SIGHT;
 	attributes = &ATTRIBUTES;
+	supply = &SUPPLY;
 	health->setArmor(ARMOR);
 	health->setMeter(HEALTH_METER);
 	amount = new Meter<int>(STANDARD);
@@ -36,11 +38,11 @@ Meter<int>* ResourceStructure::getAmount() const{
 }
 
 int ResourceStructure::getCurrentAmount() const{
-	return *amount->getCurrentValue();
+	return amount->getCurrentValue();
 }
 
 int ResourceStructure::getMaxAmount() const{
-	return *amount->getMaxValue();
+	return amount->getMaxValue();
 }
 
 void ResourceStructure::setAmount(Meter<int> *m){

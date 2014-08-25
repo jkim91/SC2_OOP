@@ -46,6 +46,9 @@
     <Filter Include="Header Files\Resource Supply Chain\Transport">
       <UniqueIdentifier>{0f78c376-1945-49e1-be73-6a49b0f94b3f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Players">
+      <UniqueIdentifier>{340e0d03-e2a4-42af-9718-6ecc7817c5ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -83,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="Meter.h">
       <Filter>Header Files\Defense</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\World</Filter>
     </ClInclude>
     <ClInclude Include="SCV.h">
       <Filter>Header Files\Objects</Filter>
@@ -137,6 +137,18 @@
     </ClInclude>
     <ClInclude Include="Worker.h">
       <Filter>Header Files\Resource Supply Chain\Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="ZergPlayer.h">
+      <Filter>Header Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="TerranPlayer.h">
+      <Filter>Header Files\Players</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtossPlayer.h">
+      <Filter>Header Files\Players</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,9 @@ MineralField::MineralField(){
 	name = &NAME;
 }
 
-MineralField::MineralField(MineralField &m) : ResourceStructure(m){}
+MineralField::MineralField(MineralField &m) : ResourceStructure(m){
+	name = &NAME;
+}
 
 MineralField::~MineralField(){}
 
