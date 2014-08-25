@@ -20,13 +20,16 @@ public:
 	void hold(); //hold
 
 	//getter
+	int* getSupply();
 	Kinematics_2D* getMovement() const;
-
+	
 	//setter
+	void setSupply(int* supply);
 	void setMovement(Kinematics_2D &k);
 
 protected:
-	Kinematics_2D *movement;
+	int* supply; //supply required for unit (SHARED)
+	Kinematics_2D* movement; //Kinematics object for the unit to move (UNIQUE)
 };
 
 #endif

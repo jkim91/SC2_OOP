@@ -7,6 +7,10 @@ Explanation:
 	Both of these values will be on the stack, instead on the heap because objects will point to the armor object, not to any of its state (refer to the Meter class for an example). Also, armor will not be dynamically created.
 */
 
+#include <string>
+
+using namespace std;
+
 class Armor{
 public:
 	Armor(); //default constructor
@@ -15,16 +19,20 @@ public:
 	Armor(Armor &a); //copy constructor (Deep copy)
 
 	//getters
+	string getName();
 	float getVal() const; //getter for value
 	bool getIsInvulnerable() const; //getter for invulnerable
 	
 	//setters
+	void setName(string &name);
 	void setVal(float val); //setter for val
 	void setIsInvulnerable(bool flag); //setter for invulnerable
 
 protected:
-	bool isInvulnerable; //is it invulnerable? (UNIQUE)
+	string name; //name of armor (UNIQUE)
+	int level; //upgrade level of armor, defaults to zero (UNIQUE)
 	float val; //amount of armor points (UNIQUE)
+	bool isInvulnerable; //is it invulnerable? (UNIQUE)
 };
 
 #endif
