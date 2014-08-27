@@ -2,6 +2,8 @@
 #ifndef _WEAPON_H
 #define _WEAPON_H
 
+class GameObject;
+
 #include <string>
 
 using namespace std;
