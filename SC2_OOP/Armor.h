@@ -3,36 +3,53 @@
 
 /*
 Explanation:
-	armor has two variables, isInvulnerable flag and the value of armor points.
-	Both of these values will be on the stack, instead on the heap because objects will point to the armor object, not to any of its state (refer to the Meter class for an example). Also, armor will not be dynamically created.
+	Armor has three variables, name, level, isInvulnerable flag and the value of armor points.
+	name will point to a string within the possible armor name values, so shared.
+	level will always be unique, depending on the player, so unique.
+	value will always be unique due to level, so unique.
+	isInvulnerable will always point to yes or no, within the Armor class.
 */
 
 #include <string>
+#include <set>
 
 using namespace std;
 
 class Armor{
 public:
 	Armor(); //default constructor
-	Armor(float val);//primitive constructor, default to false for invulnerable status
-	Armor(bool flag); //primitive constructor, with value and flag
-	Armor(Armor &a); //copy constructor (Deep copy)
+	Armor(string &name); //constructor with name parameter
+	Armor(string &name, float val); //constructor with name and armor value parameter
+	Armor(string &name, bool &isInvulnerable); //constructor with name and isInvulnerable flag(should be true, to be honest)
+	Armor(Armor &a); //copy constructor
+
+	//functions
+	string getNameValue();
+	bool getIsInvulnerableValue();
 
 	//getters
-	string getName();
-	float getVal() const; //getter for value
-	bool getIsInvulnerable() const; //getter for invulnerable
+	string* getName();
+	int getLevel();
+	float getVal();
+	bool* getIsInvulnerable();
 	
 	//setters
-	void setName(string &name);
-	void setVal(float val); //setter for val
-	void setIsInvulnerable(bool flag); //setter for invulnerable
+	void setName(string &name); //pass-by reference because it refers to a class variable
+	void setLevel(int level);
+	void setVal(float val);
+	void setIsInvulnerable(bool &flag); //pass-by reference because it refers to a class variable
 
 protected:
-	string name; //name of armor (UNIQUE)
+	//state
+	string* name; //name of armor (SHARED)
 	int level; //upgrade level of armor, defaults to zero (UNIQUE)
 	float val; //amount of armor points (UNIQUE)
-	bool isInvulnerable; //is it invulnerable? (UNIQUE)
+	bool* isInvulnerable; //is it invulnerable? (SHARED)
+
+	//constant
+	static set<string> armorNames; //list of possible armor names
+	static bool YES; //flag for yes
+	static bool NO; //flag for no
 };
 
 #endif

@@ -5,6 +5,7 @@
 class GameObject;
 
 #include <string>
+#include <set>
 
 using namespace std;
 
@@ -29,6 +30,7 @@ public:
 	float* getModifier();
 	float* getRange();
 	float* getCooldown();
+	set<string> getWeaponNames();
 
 	//setters
 	void setName(string &name);
@@ -37,6 +39,7 @@ public:
 	void setModifier(float &modifier);
 	void setRange(float &range);
 	void setCooldown(float &cooldown);
+	void setWeaponNames(set<string> names);
 
 protected:
 	//state
@@ -46,8 +49,7 @@ protected:
 	float* modifier; //damage modifier of weapon via upgrade (SHARED)
 	float* range; //range of weapon (SHARED)
 	float* cooldown; //cooldown of weapon (SHARED)
-
-	//constants
+	static set<string> weaponNames; //list of strings of possible weapons names (UNIQUE)	
 };
 
 #endif
