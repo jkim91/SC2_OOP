@@ -2,6 +2,9 @@
 #include "Meter.h"
 #include "Resource.h"
 
+string MineralField::NAME = "Mineral Field";
+string MineralField::TYPE = "Mineral";
+
 MineralField::MineralField(){
 	name = &NAME;
 }
@@ -17,5 +20,5 @@ void MineralField::giveResource(Worker &w){
 }
 
 Resource* MineralField::createResource(int amount){
-	return new Resource(amount, Resource::MINERAL);
+	return new Resource(amount, TYPE);
 }

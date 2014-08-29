@@ -23,8 +23,7 @@ public:
 
 protected:
 	static string NAME; //name of mineral field
+	static string TYPE; //type of Resource to give to Worker
 };
-
-string MineralField::NAME = "Mineral Field";
 
 #endif

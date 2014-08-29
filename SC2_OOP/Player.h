@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -16,27 +17,27 @@ public:
 	Player(string &race);
 	~Player();
 
-	//functions
-	virtual void initialize() = 0; //initialize player's objects onto World
-	void addMineral(int amount); //add to mineral bank
-	void subMineral(int amount); //subtract from mineral bank
-	void addGas(int amount); //add to gas bank
-	void subGas(int amount); //subtract from gas bank
-	string getRaceValue(); //get race description
+	//abstract methods
+	virtual void initObjects() = 0; //initialize player's objects onto World
+
+	//methods
+	void initResources();
+	void addResource(int amount, string type);
+	void subResource(int amount, string type);
+	int getResource(string type);
 	void createControlGroup(int number); //create control group with selectedObjects, previous control group overwritten
 	void addToControlGroup(int number); //add to control group with selectedObjects
-	
+	string getRaceValue(); //get race description
+
 	//getters
-	int getMineral();
-	int getGas();
+	map<string, int> getResources();
 	int getCurrentSupply();
 	int getMaxSupply();
 	string* getRace();
 	World* getWorld();
 
 	//setters
-	void setMineral(int amount);
-	void setGas(int amount);
+	void setResources(map<string, int> m);
 	void setCurrentSupply(int amount);
 	void setMaxSupply(int amount);
 	void setRace(string &race);
@@ -44,14 +45,11 @@ public:
 
 protected:
 	//functions
-	void addSupplyToCurrent(int amount); //add supply to current
-	void subSupplyFromCurrent(int amount); //subtract supply from current
-	void addSupplyToMax(int amount); //add supply to max
-	void subSupplyFromMax(int amount); //subtract supply from max
+	void addSupply(int amount, bool isMax); //add supply to current
+	void subSupply(int amount, bool isMax); //subtract supply from current
 	
 	//state
-	int mineral; //current amount of minerals (UNIQUE)
-	int gas; //current amount of gas (UNIQUE)
+	map<string, int> resources; //BST to map resource types with amount of resource
 	int currentSupply; //current supply used by Player (UNIQUE)
 	int maxSupply; //current max supply for Player (UNIQUE)
 	GameObject* selectedObject; //currently selected object (UNIQUE)

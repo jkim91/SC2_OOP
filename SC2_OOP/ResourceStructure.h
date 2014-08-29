@@ -9,7 +9,7 @@ Explanation:
 
 #include "GameObject.h"
 
-template <class T> class Meter;
+class Meter;
 class Resource;
 class Worker;
 
@@ -28,21 +28,19 @@ public:
 	virtual Resource* createResource(int request) = 0; //create the appropriate resource (Factory Method)
 	
 	//getters
-	Meter<int>* getAmount() const; //getter for amount meter
-	int getMaxAmount() const; //getter for max amount value
-	int getCurrentAmount() const; //getter for current amount value
+	int getAmount() const; //getter for amount meter
 
 	//setters
-	void setAmount(Meter<int> *m); //setter for amount
+	void setAmount(int m); //setter for amount
 	
 protected:
-	Meter<int> *amount; //amount of resource it currently has. (UNIQUE)
+	int amount; //amount of resource it currently has. (UNIQUE)
 	
 	static int STANDARD; //Starting amount of resource for structure
-	static Meter<float> HEALTH_METER; //meter for HEALTH
+	static Meter HEALTH; //meter for HEALTH
 	static Armor ARMOR; //Armor for all ResourceStructures. All ResourceStructures are invulnerable
+	static string ARMOR_NAME; //name of ResoruceStructure armor
 	static float SIGHT; //sight radius for all resource structures
-	static int SUPPLY; //supply amount for all resource structures
 	static set<string> ATTRIBUTES; //attributes for all resource structures
 };
 

@@ -34,7 +34,6 @@ protected:
 	Geyser *geyser;
 
 	static float SIGHT;
-	static Armor ARMOR;
 	static float ARMOR_VALUE;
 };
 

@@ -20,7 +20,11 @@ void Worker::gather(ResourceStructure *r){
 	r->giveResource(*this);
 }
 
-Resource* Worker::getResource() const{
+void Worker::dropOff(ResourceCenter *c){
+	c->obtain(res);
+}
+
+Resource* Worker::getResource(){
 	return res;
 }
 

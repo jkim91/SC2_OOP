@@ -14,13 +14,14 @@ public:
 
 	//methods
 	virtual void gather(ResourceStructure *r); //gather from a resource and obtain a resource fragment
-	
+	virtual void dropOff(ResourceCenter *c); //drop the resource fragment at a gather center
+
 	//abstract methods
 	virtual void returnCargo() = 0; //return cargo to nearest ResourceCenter, if possible
-	virtual void dropOff(ResourceCenter *g) = 0; //drop the resource fragment at a gather center
+	virtual Player* getWorkerOwner() = 0; //get the Player object that owns this Worker object
 
 	//getter
-	Resource* getResource() const;
+	Resource* getResource();
 
 	//setter
 	void setResource(Resource *res);

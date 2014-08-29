@@ -17,7 +17,8 @@ public:
 	virtual Resource* createResource(int amount);
 
 protected:
-	static string NAME;
+	static string NAME; //String form of Vespene Geyser
+	static string TYPE; //type of Resource to give to Worker
 };
 
 #endif

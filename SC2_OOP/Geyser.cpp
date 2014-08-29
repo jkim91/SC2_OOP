@@ -7,7 +7,7 @@ Geyser::Geyser(){
 }
 
 Geyser::Geyser(Geyser &g) : ResourceStructure(g){
-	if(g.collector != NULL) this->collector = new GasCollector(*g.collector);
+	collector = NULL;
 }
 
 Geyser::~Geyser(){
