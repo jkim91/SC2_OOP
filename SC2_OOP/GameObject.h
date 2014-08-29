@@ -31,8 +31,8 @@ public:
 	virtual ~GameObject(); //destructor
 	
 	//methods
-	virtual void addHealth(float amount); //add to the object's current health
-	virtual void subHealth(float amount); //subtract from the object's current health
+	void addHealth(float amount); //add to the object's current health
+	void subHealth(float amount); //subtract from the object's current health
 	string getNameValue(); //return name by value
 	bool getGroundStatusValue(); //return ground status by value
 	float getSightRadiusValue(); //return sight radius by value
