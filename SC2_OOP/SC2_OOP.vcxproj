@@ -92,7 +92,6 @@
     <ClInclude Include="Geyser.h" />
     <ClInclude Include="GasCollector.h" />
     <ClInclude Include="ResourceCenter.h" />
-    <ClInclude Include="Health.h" />
     <ClInclude Include="Lift.h" />
     <ClInclude Include="Meter.h" />
     <ClInclude Include="MineralField.h" />
@@ -101,7 +100,7 @@
     <ClInclude Include="ResourceStructure.h" />
     <ClInclude Include="Rotation.h" />
     <ClInclude Include="SCV.h" />
-    <ClInclude Include="Shield.h" />
+    <ClInclude Include="RegenMeter.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Transform.h" />
@@ -120,13 +119,12 @@
     <ClCompile Include="ResourceCenter.cpp" />
     <ClCompile Include="Geyser.cpp" />
     <ClCompile Include="GasCollector.cpp" />
-    <ClCompile Include="Health.cpp" />
     <ClCompile Include="Meter.cpp" />
     <ClCompile Include="MineralField.cpp" />
     <ClCompile Include="Regen.cpp" />
     <ClCompile Include="ResourceStructure.cpp" />
     <ClCompile Include="SC2_OOP.cpp" />
-    <ClCompile Include="Shield.cpp" />
+    <ClCompile Include="RegenMeter.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

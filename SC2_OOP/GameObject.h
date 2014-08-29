@@ -19,10 +19,10 @@ Explanation:
 
 using namespace std;
 
-class Health;
 class Transform;
 class Player;
 class Armor;
+class Meter;
 
 class GameObject{
 public:
@@ -41,7 +41,7 @@ public:
 	string* getName(); //getter for name
 	bool* getGroundStatus(); //getter for status 
 	float* getSightRadius(); //getter for sight radius
-	Health* getHealth(); //getter for health
+	Meter* getHealth(); //getter for health
 	Armor* getArmor(); //getter for armor
 	set<string>* getAttributes(); //getter for all attributes
 	Player* getPlayer(); //getter for player
@@ -50,7 +50,7 @@ public:
 	void setName(string &name); //setter for name
 	void setSightRadius(float &sightRadius); //set the radius to a new value
 	void setGroundStatus(bool &status); //set ground status
-	void setHealth(Health &h); //setter for health
+	void setHealth(Meter &h); //setter for health
 	void setArmor(Armor &a); //setter for armor
 	void setAttributes(set<string> &s); //setter for attributes
 	void setPlayer(Player &owner); //link to a player
@@ -62,7 +62,8 @@ protected:
 	string *name; //name of the object, usually the class name (SHARED)
 	bool *groundStatus; //status for on the ground or air (SHARED)
 	float *sightRadius; //sight radius for what the object can "see" (SHARED)
-	Health *health; // health of gameObject (UNIQUE)
+	Meter *health; // health of gameObject (UNIQUE)
+	Armor *armor; //armor of gameObject(SHARED)
 	set<string> *attributes; //set of string attributes (SHARED)
 	Player *player; //player that owns this gameobject (SHARED)
 

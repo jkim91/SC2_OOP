@@ -81,9 +81,6 @@
     <ClInclude Include="Rotation.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Shield.h">
-      <Filter>Header Files\Defense</Filter>
-    </ClInclude>
     <ClInclude Include="Meter.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
@@ -94,9 +91,6 @@
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
     <ClInclude Include="Regen.h">
-      <Filter>Header Files\Defense</Filter>
-    </ClInclude>
-    <ClInclude Include="Health.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
     <ClInclude Include="Kinematics_2D.h">
@@ -147,6 +141,9 @@
     <ClInclude Include="ProtossPlayer.h">
       <Filter>Header Files\Players</Filter>
     </ClInclude>
+    <ClInclude Include="RegenMeter.h">
+      <Filter>Header Files\Defense</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -158,16 +155,10 @@
     <ClCompile Include="Armor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Health.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Meter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Regen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Shield.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GasCollector.cpp">
@@ -207,6 +198,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Combat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegenMeter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

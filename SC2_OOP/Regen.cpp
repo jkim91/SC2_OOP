@@ -3,44 +3,37 @@
 
 #define NULL 0
 
-template<class T>
-Regen<T>::Regen(){
+Regen::Regen(){
 	rate = (float) 0.0;
 }
 
-template<class T>
-Regen<T>::Regen(float &val){
+Regen::Regen(float &val){
 	rate = val;
 }
 
-template<class T>
-Regen<T>::~Regen(){
+Regen::~Regen(){
 }
 
 
-template<class T>
-void Regen<T>::execute(Meter<T> &m){
+void Regen::execute(Meter &m){
 	while (!(m.isFull())){
 		m.add(rate);
 	}
-	if (m.getCurrentValue() > m.getMaxValue()) m.setCurrentToMax();
+	if (m.getCurrent() > m.getMaxValue()) m.setCurrentToMax();
 }
 
-template<class T>
-void Regen<T>::execute(Meter<T> *m){
+void Regen::execute(Meter *m){
 	if (m == NULL) return;
 	while (!(m->isFull())){
 		m->add(rate);
 	}
-	if (m->getCurrentValue() > m->getMaxValue()) m->setCurrentToMax();
+	if (m->getCurrent() > m->getMaxValue()) m->setCurrentToMax();
 }
 
-template<class T>
-float Regen<T>::getRate() const{
+float Regen::getRate(){
 	return rate;
 }
 
-template<class T>
-void Regen<T>::setRate(float rate){
+void Regen::setRate(float rate){
 	this->rate = rate;
 }

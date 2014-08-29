@@ -3,25 +3,24 @@
 #define _REGEN_H
 
 /*
-	Explanation: Regen fills up a Meter object at a fixed rate. Pass in a Meter object of the same type into execute()
+	Explanation: Regen fills up a Meter object at a fixed rate (in float). Pass in a Meter object of the same type into execute()
 */
 
 
-template <class T> class Meter;
+class Meter;
 
-template <class T>
 class Regen{
 public:
 	Regen(); //default constructor
-	Regen(float &rate); //constructor with a Meter object
-	virtual ~Regen(); //destructor, does not delete the meter
+	Regen(float &rate); //constructor with a parameter for rate
+	virtual ~Regen(); //destructor
 
 	//methods
-	void execute(Meter<T> &m); //execute regeneration
-	void execute(Meter<T> *m); //execute regeneration
+	void execute(Meter &m); //execute regeneration (by reference)
+	void execute(Meter *m); //execute regeneration (by pointer)
 
 	//getter
-	float getRate() const; //get the value of rate
+	float getRate(); //get the value of rate
 
 	//setter
 	void setRate(float rate); //set the rate to a value

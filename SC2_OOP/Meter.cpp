@@ -1,77 +1,56 @@
 #include "Meter.h"
 #define NULL 0
 
-template<class T>
-Meter<T>::Meter(){
+Meter::Meter(){
 	max = NULL;
 	current = NULL;
 }
 
-template<class T>
-Meter<T>::Meter(T &max){
+Meter::Meter(float &max){
 	this->max = &max;
-	current = new T(max);
+	current = max;
 }
 
-template<class T>
-Meter<T>::Meter(Meter<T> &m){
+Meter::Meter(Meter &m){
 	this->max = m.max;
-	this->current = new T(*m.current);
+	this->current = m.current;
 }
 
-template<class T>
-Meter<T>::~Meter(){
-	if (current != NULL) delete current;
+Meter::~Meter(){
 }
 
-template<class T>
-void Meter<T>::add(T amount){
-	*current += amount;
+void Meter::add(float amount){
+	current += amount;
 }
 
-template<class T>
-void Meter<T>::subtract(T amount){
-	*current -= amount;
+void Meter::subtract(float amount){
+	current -= amount;
 }
 
-template<class T>
-bool Meter<T>::isFull(){
-	return (*current >= *max);
+bool Meter::isFull(){
+	return (current >= *max);
 }
 
-template<class T>
-T Meter<T>::getCurrentValue(){
-	return *current;
-}
-
-template<class T>
-T Meter<T>::getMaxValue(){
+float Meter::getMaxValue(){
 	return *max;
 }
 
-template<class T>
-T* Meter<T>::getCurrent() const{
+float Meter::getCurrent(){
 	return current;
 }
 
-template<class T>
-T* Meter<T>::getMax() const{
+float* Meter::getMax(){
 	return max;
 }
 
-template<class T>
-void Meter<T>::setCurrent(T val){
-	current = new T(val);
+void Meter::setCurrent(float val){
+	current = val;
 }
 
-template<class T>
-void Meter<T>::setCurrentToMax(T &val){
-	max = &val;
+void Meter::setMax(float &max){
+	this->max = &max;
 }
 
-template<class T>
-void Meter<T>::setCurrentToMax(){
-	*current = *max;
+void Meter::setCurrentToMax(){
+	current = *max;
 }
-
-

@@ -3,7 +3,7 @@
 #include "Geyser.h"
 
 float GasCollector::SIGHT = 9.0;
-Armor GasCollector::ARMOR = Armor((float)1.0);
+float GasCollector::ARMOR_VALUE = 1.0;
 
 GasCollector::GasCollector(){
 	sightRadius = &SIGHT;
@@ -14,17 +14,7 @@ GasCollector::GasCollector(Geyser &g){
 	sightRadius = &SIGHT;
 	geyser = &g;
 	g.setGasCollector(this);
-}
-
-GasCollector::GasCollector(GasCollector &g) : GameObject(g){
-	sightRadius = &SIGHT;
-	geyser = g.geyser;
-	g.geyser->setGasCollector(this);	
-}
-
-GasCollector::GasCollector(GasCollector &g) : GameObject(g){
-	sightRadius = g.sightRadius;
-	setGeyser(*g.geyser);
+	initArmor();
 }
 
 GasCollector::~GasCollector(){

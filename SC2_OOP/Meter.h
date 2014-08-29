@@ -9,35 +9,33 @@ Explanation:
 	So, the destructor will delete the current object, but the max will not be.
 */
 
-template<class T>
 class Meter{
 public:
 	Meter(); //default constructor, creates a new float for max (use only for testing)
-	Meter(T &max); //primitive constructor, creates new current from the reference, but max references the parameter
-	Meter(Meter<T> &m); //copy constructor, creates current, but references the max of the copy
+	Meter(float &max); //primitive constructor, creates new current from the reference, but max references the parameter
+	Meter(Meter &m); //copy constructor, creates current, but references the max of the copy
 	virtual ~Meter(); //destructor, deletes only the current, but deletes everything if it used default
 
 	//methods
-	void add(T amount); //add to current amount
-	void subtract(T amount); //subtract from current amount
+	void add(float amount); //add to current amount
+	void subtract(float amount); //subtract from current amount
 
 	//functions
 	bool isFull(); //check if current is greater than or equal to max
-	T getCurrentValue();
-	T getMaxValue();
+	float getMaxValue();
 
 	//getters
-	T* getCurrent(); //getter for current value, for GUI/debugging
-	T* getMax(); //getter for max value, for GUI/debugging
+	float getCurrent(); //getter for current value, for GUI/debugging
+	float* getMax(); //getter for max value, for GUI/debugging
 
 	//setters
-	void setCurrent(T val); //setter for current, does not create a new float.
-	void setMax(T &val);
+	void setCurrent(float val); //setter for current, does not create a new object.
+	void setMax(float &val);
 	void setCurrentToMax(); //set the current to max value		
 
 protected:
-	T *current; //current value pointer (UNIQUE)
-	T *max; //max value pointer(SHARED)
+	float current; //current value pointer (UNIQUE)
+	float *max; //max value pointer(SHARED)
 };
 
 #endif

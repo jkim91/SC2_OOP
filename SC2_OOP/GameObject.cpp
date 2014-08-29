@@ -1,8 +1,7 @@
 #include "GameObject.h"
-#include "Health.h"
+#include "Meter.h"
 #include "Armor.h"
 #include "Player.h"
-
 
 bool GameObject::GROUND = 0;
 bool GameObject::AIR = 1;
@@ -20,8 +19,7 @@ GameObject::GameObject(){
 	name = NULL;
 	groundStatus = &GROUND;
 	sightRadius = NULL;
-	supply = NULL;
-	health = new Health();
+	health = new Meter();
 	attributes = NULL;
 	player = NULL;
 }
@@ -30,8 +28,7 @@ GameObject::GameObject(GameObject &g){
 	name = g.name;
 	groundStatus = g.groundStatus;
 	sightRadius = g.sightRadius;
-	supply = g.supply;
-	health = new Health(*g.health);
+	health = new Meter(*g.health);
 	attributes = g.attributes;
 	player = g.player;
 }
@@ -60,10 +57,6 @@ float GameObject::getSightRadiusValue(){
 	return *sightRadius;
 }
 
-int GameObject::getSupplyValue(){
-	return *supply;
-}
-
 string* GameObject::getName(){
 	return name;
 }
@@ -76,16 +69,12 @@ float* GameObject::getSightRadius(){
 	return sightRadius;
 }
 
-int* GameObject::getSupply(){
-	return supply;
-}
-
-Health* GameObject::getHealth(){
+Meter* GameObject::getHealth(){
 	return health;
 }
 
 Armor* GameObject::getArmor(){
-	return health->getArmor();
+	return armor;
 }
 
 set<string>* GameObject::getAttributes(){
@@ -105,22 +94,18 @@ void GameObject::setSightRadius(float &sightRadius){
 }
 
 void GameObject::setGroundStatus(bool &status){
-	if (&status != &GROUND || &status != &AIR) return;
+	if (&status != &GROUND && &status != &AIR) return;
 	groundStatus = &status;
 }
 
-void GameObject::setSupply(int &supply){
-	this->supply = &supply;
-}
-
-void GameObject::setHealth(Health &h){
+void GameObject::setHealth(Meter &h){
 	if (health != NULL) delete health;
-	health = new Health(h);
+	health = new Meter(h);
 }
 
 void GameObject::setArmor(Armor &a){
 	if (health == NULL) return;
-	health->setArmor(a);
+	armor = &a;
 }
 
 void GameObject::setAttributes(set<string> &s){
@@ -130,4 +115,3 @@ void GameObject::setAttributes(set<string> &s){
 void GameObject::setPlayer(Player &p){
 	player = &p;
 }
-
