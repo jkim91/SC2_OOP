@@ -115,6 +115,7 @@
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Kinematics_2D.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ResourceCenter.cpp" />
     <ClCompile Include="Geyser.cpp" />

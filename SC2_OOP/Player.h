@@ -15,18 +15,26 @@ class Player{
 public:
 	Player();
 	Player(string &race);
+	Player(Player &p);
 	~Player();
 
 	//abstract methods
 	virtual void initObjects() = 0; //initialize player's objects onto World
+	virtual void initResources() = 0; //initialize player resources
 
 	//methods
-	void initResources();
+	//methods regarding resources
 	void addResource(int amount, string type);
 	void subResource(int amount, string type);
 	int getResource(string type);
+
+	//method regarding unit control
+	void selectObject(GameObject *g); //select a GameObject
+	void selectObjects(vector<GameObject*> group); //select multiple GameObjects
 	void createControlGroup(int number); //create control group with selectedObjects, previous control group overwritten
 	void addToControlGroup(int number); //add to control group with selectedObjects
+	
+	//fetch string form of Player race
 	string getRaceValue(); //get race description
 
 	//getters
@@ -52,8 +60,8 @@ protected:
 	map<string, int> resources; //BST to map resource types with amount of resource
 	int currentSupply; //current supply used by Player (UNIQUE)
 	int maxSupply; //current max supply for Player (UNIQUE)
-	GameObject* selectedObject; //currently selected object (UNIQUE)
-	vector<GameObject*> selectedObjects; //currently selected objects by Player (UNIQUE)
+	GameObject* selectedObject; //currently selected objects (UNIQUE)
+	vector<GameObject*> selectedGroup; //currently selected group of objects (UNIQUE)
 	vector<GameObject*> controlGroups[10]; //control groups for player to use (UNIQUE) 
 	vector<GameObject> allObjects; //all objects under this player's control (UNIQUE)
 	string* race; //string tag for race (SHARED)
