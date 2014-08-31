@@ -24,13 +24,16 @@ public:
 
 	//methods
 	//methods regarding resources
-	void addResource(int amount, string type);
-	void subResource(int amount, string type);
-	int getResource(string type);
+	void addResource(int amount, string type); //add resource to bank
+	bool subResource(int amount, string type); //subtract resource from bank
+	int getResourceAmount(string type);
 
-	//method regarding unit control
-	void selectObject(GameObject *g); //select a GameObject
-	void selectObjects(vector<GameObject*> group); //select multiple GameObjects
+	//methods regarding object creation/destruction
+	void addObject(GameObject *g);
+	void deleteObject(GameObject *g);
+
+	//methods regarding object control
+	void selectObject(GameObject *g, int size); //select GameObjects
 	void createControlGroup(int number); //create control group with selectedObjects, previous control group overwritten
 	void addToControlGroup(int number); //add to control group with selectedObjects
 	
@@ -52,17 +55,20 @@ public:
 	void setWorld(World *w);
 
 protected:
-	//functions
+	//abstract methods
+	virtual void determineSubclass(GameObject *g) = 0; //determine subclass for proper interface
+
+	//methods
 	void addSupply(int amount, bool isMax); //add supply to current
 	void subSupply(int amount, bool isMax); //subtract supply from current
-	
+
 	//state
 	map<string, int> resources; //BST to map resource types with amount of resource
 	int currentSupply; //current supply used by Player (UNIQUE)
 	int maxSupply; //current max supply for Player (UNIQUE)
 	GameObject* selectedObject; //currently selected objects (UNIQUE)
 	vector<GameObject*> selectedGroup; //currently selected group of objects (UNIQUE)
-	vector<GameObject*> controlGroups[10]; //control groups for player to use (UNIQUE) 
+	vector<GameObject*> controlGroup[10]; //control groups for player to use (UNIQUE) 
 	vector<GameObject> allObjects; //all objects under this player's control (UNIQUE)
 	string* race; //string tag for race (SHARED)
 	World* world; //the World that the Player is connected to (SHARED)
