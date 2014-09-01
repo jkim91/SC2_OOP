@@ -1,6 +1,6 @@
 #include "VespeneGeyser.h"
 #include "Resource.h"
-#include "GasCollector.h"
+#include "ResourceRefiner.h"
 #include "Worker.h"
 
 string VespeneGeyser::NAME = "Vespene Geyser";
@@ -10,14 +10,14 @@ VespeneGeyser::VespeneGeyser(){
 	name = &NAME;
 }
 
-VespeneGeyser::VespeneGeyser(VespeneGeyser &g) : Geyser(g){
+VespeneGeyser::VespeneGeyser(VespeneGeyser &g) : RawResourceStructure(g){
 }
 
 VespeneGeyser::~VespeneGeyser(){
 }
 
 void VespeneGeyser::giveResource(Worker &w){
-	if (collector != NULL && collector->getPlayer() == w.getWorkerOwner()) ResourceStructure::giveResource(w, 4);
+	if (refiner != NULL && refiner->getPlayer() == w.getWorkerOwner()) ResourceStructure::giveResource(w, 4);
 }
 
 Resource* VespeneGeyser::createResource(int amount){

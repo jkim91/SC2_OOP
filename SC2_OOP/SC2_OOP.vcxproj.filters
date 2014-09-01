@@ -105,9 +105,6 @@
     <ClInclude Include="Builder.h">
       <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="Geyser.h">
-      <Filter>Header Files\Resource Supply Chain\Source</Filter>
-    </ClInclude>
     <ClInclude Include="MineralField.h">
       <Filter>Header Files\Resource Supply Chain\Source</Filter>
     </ClInclude>
@@ -115,9 +112,6 @@
       <Filter>Header Files\Resource Supply Chain\Source</Filter>
     </ClInclude>
     <ClInclude Include="VespeneGeyser.h">
-      <Filter>Header Files\Resource Supply Chain\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="GasCollector.h">
       <Filter>Header Files\Resource Supply Chain\Source</Filter>
     </ClInclude>
     <ClInclude Include="ResourceCenter.h">
@@ -144,6 +138,12 @@
     <ClInclude Include="RegenMeter.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceRefiner.h">
+      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="RawResourceStructure.h">
+      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -159,9 +159,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Regen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GasCollector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MineralField.cpp">
@@ -188,9 +185,6 @@
     <ClCompile Include="Kinematics_2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Geyser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="VespeneGeyser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -204,6 +198,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceRefiner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RawResourceStructure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

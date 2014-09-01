@@ -2,11 +2,11 @@
 #ifndef _VESPENE_GEYSER_H
 #define _VESPENE_GEYSER_H
 
-#include "Geyser.h"
+#include "RawResourceStructure.h"
 
 class GasCollector;
 
-class VespeneGeyser : public Geyser{
+class VespeneGeyser : public RawResourceStructure{
 public:
 	VespeneGeyser(); //default constructor
 	VespeneGeyser(VespeneGeyser &g); //copy constructor
