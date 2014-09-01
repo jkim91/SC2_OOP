@@ -14,7 +14,6 @@ class GameObject;
 class Player{
 public:
 	Player();
-	Player(string &race);
 	Player(Player &p);
 	~Player();
 
@@ -30,7 +29,7 @@ public:
 
 	//methods regarding object creation/destruction
 	void addObject(GameObject *g);
-	void deleteObject(GameObject *g);
+	void removeObject(GameObject *g);
 
 	//methods regarding object control
 	void selectObject(GameObject *g, int size); //select GameObjects
@@ -44,11 +43,15 @@ public:
 	map<string, int> getResources();
 	int getCurrentSupply();
 	int getMaxSupply();
+	GameObject* getSelectedObject();
+	vector<GameObject*> getSelectedGroup();
+	vector<GameObject*>* getControlGroups();
+	map<string, vector<GameObject*> > getAllObjects();
 	string* getRace();
 	World* getWorld();
 
 	//setters
-	void setResources(map<string, int> m);
+	void setResources(map<string, int> &m);
 	void setCurrentSupply(int amount);
 	void setMaxSupply(int amount);
 	void setRace(string &race);
@@ -61,6 +64,7 @@ protected:
 	//methods
 	void addSupply(int amount, bool isMax); //add supply to current
 	void subSupply(int amount, bool isMax); //subtract supply from current
+	void removeObjectFromList(GameObject *g, vector<GameObject*> &v); //remove object from a list
 
 	//state
 	map<string, int> resources; //BST to map resource types with amount of resource
@@ -69,7 +73,7 @@ protected:
 	GameObject* selectedObject; //currently selected objects (UNIQUE)
 	vector<GameObject*> selectedGroup; //currently selected group of objects (UNIQUE)
 	vector<GameObject*> controlGroup[10]; //control groups for player to use (UNIQUE) 
-	vector<GameObject> allObjects; //all objects under this player's control (UNIQUE)
+	map<string, vector<GameObject*> > allObjects; //all objects under this player's control (UNIQUE)
 	string* race; //string tag for race (SHARED)
 	World* world; //the World that the Player is connected to (SHARED)
 

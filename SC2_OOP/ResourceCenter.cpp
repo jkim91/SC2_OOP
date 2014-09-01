@@ -5,15 +5,14 @@
 ResourceCenter::ResourceCenter(){
 }
 
-ResourceCenter::ResourceCenter(ResourceCenter &r) : GameObject(r){
+ResourceCenter::ResourceCenter(ResourceCenter &r){
 }
 
 ResourceCenter::~ResourceCenter(){
 }
 
 void ResourceCenter::obtain(Resource *r){
-	//TODO: work on Player object
-	//player->addResource(r.getAmount(), r.getType());
+	getCenterOwner()->addResource(r->getAmount(), r->getTypeValue());
 	delete r;
 	r = NULL;
 }

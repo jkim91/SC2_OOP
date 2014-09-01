@@ -5,15 +5,13 @@
 Player::Player(){
 }
 
-Player::Player(string &race){
-}
-
 Player::~Player(){
 }
 
 void Player::addResource(int amount, string type){
 	resources[type] += amount;
 }
+
 bool Player::subResource(int amount, string type){
 	if (resources[type] >= amount){
 		resources[type] -= amount;
@@ -21,8 +19,22 @@ bool Player::subResource(int amount, string type){
 	}
 	else return 0;
 }
+
 int Player::getResourceAmount(string type){
 	return resources[type];
+}
+
+void Player::addObject(GameObject *g){
+	allObjects[g->getNameValue()].push_back(g);
+}
+
+void Player::removeObject(GameObject *g){
+	map<string, vector<GameObject*> >::iterator it = allObjects.find(g->getNameValue());
+	removeObjectFromList(g, it->second);
+	removeObjectFromList(g, selectedGroup);
+	for(int i=0; i<10; i++){
+		removeObjectFromList(g, controlGroup[i]);
+	}
 }
 
 void Player::selectObject(GameObject *g, int size){
@@ -67,6 +79,22 @@ int Player::getMaxSupply(){
 	return maxSupply;
 }
 
+GameObject* Player::getSelectedObject(){
+	return selectedObject;
+}
+
+vector<GameObject*> Player::getSelectedGroup(){
+	return selectedGroup;
+}
+
+vector<GameObject*>* Player::getControlGroups(){
+	return controlGroup;
+}
+
+map<string, vector<GameObject*> > Player::getAllObjects(){
+	return allObjects;
+}
+
 string* Player::getRace(){
 	return race;
 }
@@ -75,7 +103,7 @@ World* Player::getWorld(){
 	return world;
 }
 
-void Player::setResources(map<string, int> m){
+void Player::setResources(map<string, int> &m){
 	resources = m;
 }
 
@@ -103,4 +131,13 @@ void Player::addSupply(int amount, bool isMax){
 void Player::subSupply(int amount, bool isMax){
 	if(isMax) maxSupply -= amount;
 	else currentSupply -= amount;
+}
+
+void Player::removeObjectFromList(GameObject *g, vector<GameObject*> &v){
+	for(int i=0; i<v.size(); i++){
+		if(v[i] == g){
+			v.erase(v.begin()+i);
+			break;
+		}
+	}
 }
