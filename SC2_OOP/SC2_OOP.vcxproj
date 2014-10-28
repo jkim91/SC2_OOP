@@ -100,7 +100,6 @@
     <ClInclude Include="Regen.h" />
     <ClInclude Include="ResourceStructure.h" />
     <ClInclude Include="Rotation.h" />
-    <ClInclude Include="SCV.h" />
     <ClInclude Include="RegenMeter.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

@@ -84,9 +84,6 @@
     <ClInclude Include="Meter.h">
       <Filter>Header Files\Defense</Filter>
     </ClInclude>
-    <ClInclude Include="SCV.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
