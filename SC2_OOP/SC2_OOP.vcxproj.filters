@@ -49,6 +49,9 @@
     <Filter Include="Header Files\Players">
       <UniqueIdentifier>{340e0d03-e2a4-42af-9718-6ecc7817c5ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Spells">
+      <UniqueIdentifier>{26611fcf-b391-40d6-9a9f-fbdbe5a88953}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -59,9 +62,6 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Ability.h">
-      <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Header Files\Objects</Filter>
@@ -143,6 +143,12 @@
     </ClInclude>
     <ClInclude Include="RawResourceStructure.h">
       <Filter>Header Files\Resource Supply Chain\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Ability.h">
+      <Filter>Header Files\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="Spellcaster.h">
+      <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,11 +2,13 @@
 #ifndef _WORKER_H
 #define _WORKER_H
 
+#include "Unit.h"
+
 class ResourceStructure;
 class Resource;
 class ResourceCenter;
 
-class Worker{
+class Worker: public Unit{
 public:
 	Worker(); //default constructor
 	Worker(Worker &w); //copy constructor
@@ -18,7 +20,6 @@ public:
 
 	//abstract methods
 	virtual void returnCargo() = 0; //return cargo to nearest ResourceCenter, if possible
-	virtual Player* getWorkerOwner() = 0; //get the Player object that owns this Worker object
 
 	//getter
 	Resource* getResource();

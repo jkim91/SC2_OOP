@@ -13,19 +13,19 @@ Unit::~Unit(){
 	delete movement;
 }
 
-void Unit::stop(){
+bool Unit::stop(){
 	movement->stop();
 }
 
-void Unit::move(float position[3]){
+bool Unit::move(float position[3]){
 	//TODO
 }
 
-void Unit::patrol(float position[3]){
+bool Unit::patrol(float position[3]){
 	//TODO
 }
 
-void Unit::hold(){
+bool Unit::hold(){
 	stop();
 	//TODO
 }

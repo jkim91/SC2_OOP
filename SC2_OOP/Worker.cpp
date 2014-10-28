@@ -21,7 +21,7 @@ void Worker::gather(ResourceStructure *r){
 }
 
 void Worker::dropOff(ResourceCenter *c){
-	if(getWorkerOwner() == c->getCenterOwner()) c->obtain(res);
+	if(getPlayer() == c->getPlayer()) c->obtain(res);
 }
 
 Resource* Worker::getResource(){

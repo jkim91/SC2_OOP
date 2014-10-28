@@ -21,6 +21,8 @@ public:
 	void setWeapon(Weapon &w);
 
 protected:
+	virtual void attackDetails(GameObject *g) = 0;
+
 	Weapon* weapon; //weapon for a Combat object (SHARED)
 };
 

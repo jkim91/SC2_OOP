@@ -14,10 +14,13 @@ public:
 	virtual ~Unit();
 	
 	//methods
-	void stop(); //stop the unit immediately
-	void move(float position[3]); //move to a position
-	void patrol(float position[3]); //patrol from current to destination
-	void hold(); //hold
+	bool stop(); //stop the unit immediately
+	bool move(float position[3]); //move to a position
+	bool patrol(float position[3]); //patrol from current to destination
+	bool hold(); //hold
+
+	//value getter
+	int getSupplyValue();
 
 	//getter
 	int* getSupply();

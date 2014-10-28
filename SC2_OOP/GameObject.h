@@ -33,6 +33,14 @@ public:
 	//methods
 	void addHealth(float amount); //add to the object's current health
 	void subHealth(float amount); //subtract from the object's current health
+	
+	//methods for unit movement, subclass Unit implements them appropriately
+	virtual bool stop(); //stop the unit immediately
+	virtual bool move(float* position); //move to a position
+	virtual bool patrol(float* position); //patrol from current to destination
+	virtual bool hold(); //hold
+
+	//value getters
 	string getNameValue(); //return name by value
 	bool getGroundStatusValue(); //return ground status by value
 	float getSightRadiusValue(); //return sight radius by value
