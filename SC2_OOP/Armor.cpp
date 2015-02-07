@@ -1,7 +1,7 @@
 #include "Armor.h"
 
-bool Armor::YES = true;
-bool Armor::NO = false;
+const bool Armor::YES = true;
+const bool Armor::NO = false;
 
 //code to fill in below for armor names (compile-time option)
 
@@ -60,13 +60,11 @@ float Armor::getVal(){
 	return val;
 }
 
-bool* Armor::getIsInvulnerable(){
+const bool* Armor::getIsInvulnerable(){
 	return isInvulnerable;
 }
 
-void Armor::setName(string &name){ //not 100% sure if it works
-	if(name == *armorNames.find(name)) this->name = &name;
-	//should be some code here for exception
+void Armor::setName(string &name){
 }
 
 void Armor::setLevel(int level){
@@ -77,7 +75,7 @@ void Armor::setVal(float val){
 	this->val = val;
 }
 
-void Armor::setIsInvulnerable(bool &flag){
+void Armor::setIsInvulnerable(const bool &flag){
 	if(&flag == &YES || &flag == &NO) isInvulnerable = &flag;
 	//should be some code here for exception
 }

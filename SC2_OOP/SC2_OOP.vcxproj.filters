@@ -13,44 +13,47 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Objects">
-      <UniqueIdentifier>{0cc43390-a830-4750-aaa0-9277dc98dfab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Geometry">
       <UniqueIdentifier>{d9ab5dda-22a9-4c16-85fe-4ec68c79bc2a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\World">
       <UniqueIdentifier>{eb8d5100-a39c-40ef-9a9e-b268a33e6839}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Defense">
-      <UniqueIdentifier>{8ea08f16-a71a-42bf-94af-cc04626fbdd2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Offense">
       <UniqueIdentifier>{bc53d6e9-38b6-4feb-bd4f-26ccfd411a00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Resource Supply Chain">
-      <UniqueIdentifier>{708053c9-94d4-43ae-a100-7f8baa61f702}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Interfaces">
       <UniqueIdentifier>{fef6ab71-c3dc-49c7-aebd-455f0ad17c06}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Resource Supply Chain\Source">
-      <UniqueIdentifier>{4bd833f4-16ad-447f-8934-8488c7bf9c35}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Resource Supply Chain\Destination">
-      <UniqueIdentifier>{16a86302-c856-4499-9f03-1a6422d8d77f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Resource Supply Chain\Cargo">
-      <UniqueIdentifier>{e3822994-490d-4c14-b79a-914fddbbb37d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Resource Supply Chain\Transport">
-      <UniqueIdentifier>{0f78c376-1945-49e1-be73-6a49b0f94b3f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Players">
       <UniqueIdentifier>{340e0d03-e2a4-42af-9718-6ecc7817c5ba}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Spells">
       <UniqueIdentifier>{26611fcf-b391-40d6-9a9f-fbdbe5a88953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects">
+      <UniqueIdentifier>{0cc43390-a830-4750-aaa0-9277dc98dfab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Structures">
+      <UniqueIdentifier>{c13c0a93-9e52-4179-ab72-0558a906f591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Structures\Resource">
+      <UniqueIdentifier>{bd54a590-1c92-40f8-a77c-78ec2554a3e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Units">
+      <UniqueIdentifier>{12d660c4-50af-4f06-b504-7c12af2a7acc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Units\Workers">
+      <UniqueIdentifier>{a6213a88-da1e-41eb-b06e-8287b425c8d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ResourceFragment">
+      <UniqueIdentifier>{708053c9-94d4-43ae-a100-7f8baa61f702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Meters">
+      <UniqueIdentifier>{8ea08f16-a71a-42bf-94af-cc04626fbdd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Meters\Health">
+      <UniqueIdentifier>{3c39e30f-23ba-42bb-8a9f-38a9877646c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,13 +67,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Unit.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Armor.h">
-      <Filter>Header Files\Defense</Filter>
+      <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Header Files\World</Filter>
@@ -81,14 +78,11 @@
     <ClInclude Include="Rotation.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
-    <ClInclude Include="Meter.h">
-      <Filter>Header Files\Defense</Filter>
-    </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
     <ClInclude Include="Regen.h">
-      <Filter>Header Files\Defense</Filter>
+      <Filter>Header Files\Meters</Filter>
     </ClInclude>
     <ClInclude Include="Kinematics_2D.h">
       <Filter>Header Files\Geometry</Filter>
@@ -101,24 +95,6 @@
     </ClInclude>
     <ClInclude Include="Builder.h">
       <Filter>Header Files\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="MineralField.h">
-      <Filter>Header Files\Resource Supply Chain\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceStructure.h">
-      <Filter>Header Files\Resource Supply Chain\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="VespeneGeyser.h">
-      <Filter>Header Files\Resource Supply Chain\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceCenter.h">
-      <Filter>Header Files\Resource Supply Chain\Destination</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files\Resource Supply Chain\Cargo</Filter>
-    </ClInclude>
-    <ClInclude Include="Worker.h">
-      <Filter>Header Files\Resource Supply Chain\Transport</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files\Players</Filter>
@@ -133,19 +109,46 @@
       <Filter>Header Files\Players</Filter>
     </ClInclude>
     <ClInclude Include="RegenMeter.h">
-      <Filter>Header Files\Defense</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceRefiner.h">
-      <Filter>Header Files\Resource Supply Chain\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="RawResourceStructure.h">
-      <Filter>Header Files\Resource Supply Chain\Source</Filter>
+      <Filter>Header Files\Meters</Filter>
     </ClInclude>
     <ClInclude Include="Ability.h">
       <Filter>Header Files\Spells</Filter>
     </ClInclude>
     <ClInclude Include="Spellcaster.h">
       <Filter>Header Files\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="MineralField.h">
+      <Filter>Header Files\GameObjects\Structures\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="RawResourceStructure.h">
+      <Filter>Header Files\GameObjects\Structures\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceRefiner.h">
+      <Filter>Header Files\GameObjects\Structures\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceStructure.h">
+      <Filter>Header Files\GameObjects\Structures\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="VespeneGeyser.h">
+      <Filter>Header Files\GameObjects\Structures\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Header Files\GameObjects\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceCenter.h">
+      <Filter>Header Files\GameObjects\Structures\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Worker.h">
+      <Filter>Header Files\GameObjects\Units\Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceFragment.h">
+      <Filter>Header Files\ResourceFragment</Filter>
+    </ClInclude>
+    <ClInclude Include="Meter.h">
+      <Filter>Header Files\Meters</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>Header Files\Meters\Health</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -176,9 +179,6 @@
     <ClCompile Include="Weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Resource.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Worker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -207,6 +207,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RawResourceStructure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceFragment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

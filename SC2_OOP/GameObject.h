@@ -1,17 +1,17 @@
 #pragma once
-#ifndef _GAMEOBJECT_H
-#define _GAMEOBJECT_H
+#ifndef _GAME_OBJECT_H
+#define _GAME_OBJECT_H
 
 /*
 Explanation:
-	GameObject is any object in the game. All objects have a name, groundStatus, sight, health, attributes,transform and the players that owns the object. GameObject should be subclassed to determine what type of object it is. It should not be created
-	Name: will not change once set, so shared.
-	groundStatus: will not change for most units, but it can happen, so unique.
-	sightRadius: can be affected by spell, so unique
-	health: will most definitely change, so unique
-	attribute: will not change once object is created, so shared.
-	player: reference to player. Player owns the object.
-	Transform: geometry details of objects, so unique. It is public, so programmer must be careful.
+	GameObject is an object that can interact with a Player object. It can be controlled by the corresponding Player owner.
+
+Instance variables:
+	name: string value that usually corresponds with the name of the class.
+	levelStatus: boolean value that determines if the object is on the ground(0) or the air(1).
+	sightRadius: float value that determines the sight range of the object.
+	health: Meter object that contains the HP information of the unit.
+	attributes: set of strings that can further modify the object by attacks or spells.
 */
 
 #include <string>
@@ -34,12 +34,6 @@ public:
 	void addHealth(float amount); //add to the object's current health
 	void subHealth(float amount); //subtract from the object's current health
 	
-	//methods for unit movement, subclass Unit implements them appropriately
-	virtual bool stop(); //stop the unit immediately
-	virtual bool move(float* position); //move to a position
-	virtual bool patrol(float* position); //patrol from current to destination
-	virtual bool hold(); //hold
-
 	//value getters
 	string getNameValue(); //return name by value
 	bool getGroundStatusValue(); //return ground status by value

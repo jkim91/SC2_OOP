@@ -26,7 +26,7 @@ public:
 	void setRegen(Regen *r);
 
 protected:
-	void restore(); //restore the shield
+	void restore(); //restore the meter
 	
 	//state
 	Regen *regen;  //regen for shield meter (SHARED)

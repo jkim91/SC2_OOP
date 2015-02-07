@@ -4,38 +4,57 @@
 
 /*
 Explanation:
-	current is unique, because every object will most definitely have a different, current amount.
-	max is shared because the max does not usually change.
-	So, the destructor will delete the current object, but the max will not be.
+	A Meter object represents a meter or gauge. It has two states, current and max. Both are floats, but current is a variable and max is a pointer.
+	
+	State, Getters, and Setters:
+		-State
+			-Current is a float variable, as this represents the uniqueness of a Meter object from another Meter object.
+			-Max is a float pointer because Meters will oftentimes share the same max value. Hence, this will save memory and time, if the max value needs to change.
+		-Getters and Setters
+			-getMax() is not recommended for use due to safety issues.
+	Methods and Functions:
+		-There are three methods, add, subtract, and setCurrentToMax. 
+			-Add will add a float value to current. 
+			-Subtract will subtract will subtract a float value from current.
+			-SetCurrentToMax will set the current value to the max value.
+		-There is one fuction, isFull. 
+			-This function will return a boolean value if the Meter is full, meaning that the current value equals the max value.
+	Constructors and Destructors:
+		-Constructors
+			-The default constructor should not be used. It uses NULL for max and for current.
+			-Constructor via float passes a float in via reference for the max pointer and current copies the value of input directly.
+			-Copy constructor takes an existing Meter object and copies the max reference and the value of the current for construction.
+		-Destructor
+			-Destructor by itself does nothing because current is destroyed when the object is destroyed and max is a reference, which may or may not be destroyed, depending on the origin of reference. Subclasses may override this, however.
 */
 
 class Meter{
 public:
-	Meter(); //default constructor, creates a new float for max (use only for testing)
-	Meter(float &max); //primitive constructor, creates new current from the reference, but max references the parameter
-	Meter(Meter &m); //copy constructor, creates current, but references the max of the copy
-	virtual ~Meter(); //destructor, deletes only the current, but deletes everything if it used default
+	Meter();
+	Meter(float &max);
+	Meter(Meter &m);
+	virtual ~Meter();
 
 	//methods
-	void add(float amount); //add to current amount
-	void subtract(float amount); //subtract from current amount
+	void add(float amount);
+	void subtract(float amount);
+	void setCurrentToMax();	
 
 	//functions
-	bool isFull(); //check if current is greater than or equal to max
-	float getMaxValue();
+	bool isFull();
 
 	//getters
-	float getCurrent(); //getter for current value, for GUI/debugging
-	float* getMax(); //getter for max value, for GUI/debugging
+	float getCurrent();
+	float* getMax(); //Not recommended for use
+	float getMaxValue();
 
 	//setters
-	void setCurrent(float val); //setter for current, does not create a new object.
+	void setCurrent(float val);
 	void setMax(float &val);
-	void setCurrentToMax(); //set the current to max value		
 
 protected:
-	float current; //current value pointer (UNIQUE)
-	float *max; //max value pointer(SHARED)
+	float current;
+	float *max;
 };
 
 #endif

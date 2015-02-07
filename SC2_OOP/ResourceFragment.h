@@ -11,12 +11,12 @@
 
 using namespace std;
 
-class Resource{
+class ResourceFragment{
 public:
-	Resource();
-	Resource(int amount, string &type);
-	Resource(Resource &r);
-	virtual ~Resource();
+	ResourceFragment();
+	ResourceFragment(int amount, string &type);
+	ResourceFragment(ResourceFragment &r);
+	virtual ~ResourceFragment();
 
 	//functions
 	string getTypeValue();

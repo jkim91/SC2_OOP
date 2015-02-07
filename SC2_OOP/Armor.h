@@ -3,15 +3,22 @@
 
 /*
 Explanation:
-	Armor has three variables, name, level, isInvulnerable flag and the value of armor points.
-	name will point to a string within the possible armor name values, so shared.
-	level will always be unique, depending on the player, so unique.
-	value will always be unique due to level, so unique.
-	isInvulnerable will always point to yes or no, within the Armor class.
+	An Armor object is an object that modifies one or several Meter objects. An Armor object is only created by a Player object and all of the GameObjects under Player use this object modify HP, if attacked.
+
+	State, Constants, Getters, and Setters:
+		-State
+			-name is a string pointer. It determines the name of the Armor object. It is a pointer because Armor objects in different Player objects may share the same name.
+			-level is a int. It is determined by the upgrades performed by the Player object.
+			-val is a float. It determines the damage offset suffered by the object.
+			-isInvulnerable is a const boolean pointer. It determines if the object referencing this Armor can be attacked or not. It can only reference YES or NO in the Armor class.
+		-Constants
+			-YES represents true for isInvulnerable.
+			-NO represents false for isInvulnerable.
+		-Getters and Setters
+	
 */
 
 #include <string>
-#include <set>
 
 using namespace std;
 
@@ -31,25 +38,24 @@ public:
 	string* getName();
 	int getLevel();
 	float getVal();
-	bool* getIsInvulnerable();
+	const bool* getIsInvulnerable();
 	
 	//setters
-	void setName(string &name); //pass-by reference because it refers to a class variable
+	void setName(string &name);
 	void setLevel(int level);
 	void setVal(float val);
-	void setIsInvulnerable(bool &flag); //pass-by reference because it refers to a class variable
+	void setIsInvulnerable(const bool &flag);
 
 protected:
 	//state
 	string* name; //name of armor (SHARED)
 	int level; //upgrade level of armor, defaults to zero (UNIQUE)
 	float val; //amount of armor points (UNIQUE)
-	bool* isInvulnerable; //is it invulnerable? (SHARED)
+	const bool* isInvulnerable; //is it invulnerable? (SHARED)
 
 	//constant
-	static set<string> armorNames; //list of possible armor names
-	static bool YES; //flag for yes
-	static bool NO; //flag for no
+	static const bool YES; //flag for yes
+	static const bool NO; //flag for no
 };
 
 #endif
