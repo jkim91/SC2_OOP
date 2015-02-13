@@ -84,6 +84,7 @@
     <ClInclude Include="Builder.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Health.h" />
     <ClInclude Include="ProtossPlayer.h" />
     <ClInclude Include="Spellcaster.h" />
     <ClInclude Include="TerranPlayer.h" />

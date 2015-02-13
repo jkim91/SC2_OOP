@@ -15,7 +15,7 @@ Explanation:
 			-YES represents true for isInvulnerable.
 			-NO represents false for isInvulnerable.
 		-Getters and Setters
-	
+			all of its state has getters and setters. However, name and invulnerable can return values, instead of the pointers.
 */
 
 #include <string>
@@ -30,15 +30,13 @@ public:
 	Armor(string &name, bool &isInvulnerable); //constructor with name and isInvulnerable flag(should be true, to be honest)
 	Armor(Armor &a); //copy constructor
 
-	//functions
-	string getNameValue();
-	bool getIsInvulnerableValue();
-
 	//getters
 	string* getName();
+	string getNameValue();
 	int getLevel();
 	float getVal();
-	const bool* getIsInvulnerable();
+	const bool* getIsInvulnerable(); //Not recommended for use
+	bool getIsInvulnerableValue();
 	
 	//setters
 	void setName(string &name);

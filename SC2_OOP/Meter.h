@@ -31,8 +31,8 @@ Explanation:
 class Meter{
 public:
 	Meter();
-	Meter(float &max);
 	Meter(Meter &m);
+	Meter(float &max);
 	virtual ~Meter();
 
 	//methods

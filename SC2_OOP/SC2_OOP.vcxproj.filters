@@ -150,6 +150,9 @@
     <ClInclude Include="Armor.h">
       <Filter>Header Files\Meters\Health</Filter>
     </ClInclude>
+    <ClInclude Include="Health.h">
+      <Filter>Header Files\Meters\Health</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
