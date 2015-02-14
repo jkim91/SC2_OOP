@@ -30,14 +30,14 @@ Explanation:
 
 class Meter{
 public:
-	Meter();
+	Meter(); //Not recommended for use
 	Meter(Meter &m);
 	Meter(float &max);
 	virtual ~Meter();
 
 	//methods
-	void add(float amount);
-	void subtract(float amount);
+	virtual void add(float amount);
+	virtual void subtract(float amount);
 	void setCurrentToMax();	
 
 	//functions

@@ -4,8 +4,7 @@
 	The Gameobject pointer points to the GameObject that owns the Health object. The corresponding GameObject know about the Health object also.
 
 	State, Getter, and Setters:
-		-all getters and setters from superclass remains unchanged.
-		-armor, and owner all have getters and setters.
+		-meter, armor, and owner all have getters and setters.
 	Methods and Functions:
 		-subtract method re-define the implementation in Meter's. It takes Armor into account and modify the Meter accordingly.
 	Constructors and Destructors:
@@ -14,38 +13,33 @@
 */
 
 #pragma once
-#ifndef _HEALTH_H
-#define _HEALTH_H
+#ifndef _REGEN_HEALTH_H
+#define _REGEN_HEALTH_H
 
 #include <string>
-#include "Meter.h"
-
-class Armor;
-class GameObject;
+#include "Health.h"
 
 using namespace std;
 
-class Health: public Meter{
+class RegenHealth : public Health{
 public:
-	Health();
-	Health(Health &h);
-	Health(float &max_health, Armor* a, GameObject *g);
-	virtual ~Health();
+	RegenHealth();
+	RegenHealth(RegenHealth &h);
+	RegenHealth(float &max_health, Armor* a, GameObject* g, float &rate);
 
-	//methods
-	void subtract(float amount);
+	virtual void execute();
 
-	//getters
-	Armor* getArmor();
-	GameObject* getOwner();
+	float* getRate();
+	float getRateValue();
+	float* getCooldown();
+	float getCooldownValue();
 
-	//setters
-	void setArmor(Armor *a);
-	void setOwner(GameObject *g);
+	void setRate(float &f);
+	void setCooldown(float &f);
 
 protected:
-	Armor* armor;
-	GameObject* owner;
+	float* rate;
+	float* cooldown;
 };
 
 #endif

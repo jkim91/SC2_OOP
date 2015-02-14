@@ -81,9 +81,6 @@
     <ClInclude Include="Weapon.h">
       <Filter>Header Files\Offense</Filter>
     </ClInclude>
-    <ClInclude Include="Regen.h">
-      <Filter>Header Files\Meters</Filter>
-    </ClInclude>
     <ClInclude Include="Kinematics_2D.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
@@ -107,9 +104,6 @@
     </ClInclude>
     <ClInclude Include="ProtossPlayer.h">
       <Filter>Header Files\Players</Filter>
-    </ClInclude>
-    <ClInclude Include="RegenMeter.h">
-      <Filter>Header Files\Meters</Filter>
     </ClInclude>
     <ClInclude Include="Ability.h">
       <Filter>Header Files\Spells</Filter>
@@ -153,6 +147,9 @@
     <ClInclude Include="Health.h">
       <Filter>Header Files\Meters\Health</Filter>
     </ClInclude>
+    <ClInclude Include="RegenHealth.h">
+      <Filter>Header Files\Meters\Health</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -165,9 +162,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Meter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Regen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MineralField.cpp">
@@ -200,9 +194,6 @@
     <ClCompile Include="Combat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RegenMeter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -213,6 +204,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ResourceFragment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Health.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegenHealth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

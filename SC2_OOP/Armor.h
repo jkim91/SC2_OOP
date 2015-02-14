@@ -44,6 +44,10 @@ public:
 	void setVal(float val);
 	void setIsInvulnerable(const bool &flag);
 
+	//constant
+	static const bool YES; //flag for yes
+	static const bool NO; //flag for no
+
 protected:
 	//state
 	string* name; //name of armor (SHARED)
@@ -51,9 +55,6 @@ protected:
 	float val; //amount of armor points (UNIQUE)
 	const bool* isInvulnerable; //is it invulnerable? (SHARED)
 
-	//constant
-	static const bool YES; //flag for yes
-	static const bool NO; //flag for no
 };
 
 #endif

@@ -3,8 +3,6 @@
 const bool Armor::YES = true;
 const bool Armor::NO = false;
 
-//code to fill in below for armor names (compile-time option)
-
 Armor::Armor(){
 	name = NULL;
 	level = 0;
