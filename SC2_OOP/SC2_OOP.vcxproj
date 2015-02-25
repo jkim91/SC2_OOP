@@ -86,6 +86,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Health.h" />
     <ClInclude Include="ProtossPlayer.h" />
+    <ClInclude Include="Regen.h" />
     <ClInclude Include="RegenHealth.h" />
     <ClInclude Include="Spellcaster.h" />
     <ClInclude Include="TerranPlayer.h" />
@@ -117,6 +118,7 @@
     <ClCompile Include="Health.cpp" />
     <ClCompile Include="Kinematics_2D.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Regen.cpp" />
     <ClCompile Include="RegenHealth.cpp" />
     <ClCompile Include="ResourceFragment.cpp" />
     <ClCompile Include="ResourceCenter.cpp" />
