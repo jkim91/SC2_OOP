@@ -8,10 +8,9 @@ Health::Health(){
 
 Health::Health(Health &h) : Meter(h){
 	armor = h.armor;
-	owner = h.owner;
 }
 
-Health::Health(float &max_health, Armor * a, GameObject * g){
+Health::Health(float &max_health, Armor * a, GameObject *g){
 	current = max_health;
 	max = &max_health;
 	armor = a;
@@ -29,14 +28,6 @@ Armor* Health::getArmor(){
 	return armor;
 }
 
-GameObject* Health::getOwner(){
-	return owner;
-}
-
 void Health::setArmor(Armor *a){
 	armor = a;
-}
-
-void Health::setOwner(GameObject *g){
-	owner = g;
 }

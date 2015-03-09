@@ -8,7 +8,7 @@ class Regen{
 public:
 	Regen();
 	Regen(Regen &r);
-	Regen(float &rate, float &cooldown, Meter &m);
+	Regen(float &rate, float &cooldown, Meter *m);
 
 	void execute();
 	void switchInterrupt();

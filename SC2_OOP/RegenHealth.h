@@ -18,19 +18,26 @@
 
 #include <string>
 #include "Health.h"
-#include "Regen.h"
+
+class Regen;
 
 using namespace std;
 
-class RegenHealth : public Health, public Regen{
+class RegenHealth : public Health{
 public:
 	RegenHealth();
 	RegenHealth(RegenHealth &h);
-	RegenHealth(float &max_health, Armor* a, GameObject* g, float &rate, float &cooldown);
+	RegenHealth(float &max_health, Armor* a, GameObject *g, float &rate, float &cooldown);
 	virtual ~RegenHealth();
 
-protected:
+	//getters
+	Regen* getRegen();
 
+	//setters
+	void setRegen(Regen* r);
+
+protected:
+	Regen* r;
 };
 
 #endif
