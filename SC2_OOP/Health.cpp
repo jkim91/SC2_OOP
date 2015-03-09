@@ -21,7 +21,7 @@ Health::~Health(){
 }
 
 void Health::subtract(float amount){
-	current -= amount - armor->getVal();
+	if(!armor->getIsInvulnerableValue()) current -= amount - armor->getVal();
 }
 
 Armor* Health::getArmor(){

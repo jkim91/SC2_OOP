@@ -1,8 +1,5 @@
 #include "Armor.h"
 
-const bool Armor::YES = true;
-const bool Armor::NO = false;
-
 Armor::Armor(){
 	name = NULL;
 	level = 0;
@@ -11,28 +8,21 @@ Armor::Armor(){
 }
 
 Armor::Armor(string &name){
-	setName(name);
+	this->name = &name;
 	level = 0;
 	val = 0.0;
 	isInvulnerable = &NO;
 }
 
 Armor:: Armor(string &name, float val){
-	setName(name);
+	this->name = &name;
 	level = 0;
 	this->val = val;
 	isInvulnerable = &NO;
 }
 
-Armor::Armor(string &name, bool &flag){
-	setName(name);
-	level = 0;
-	val = 0.0;
-	setIsInvulnerable(flag);
-}
-
 Armor::Armor(Armor &a){
-	setName(*a.name);
+	name = a.name;
 	level = a.level;
 	val = a.val;
 	setIsInvulnerable(*a.isInvulnerable);
@@ -63,6 +53,7 @@ const bool* Armor::getIsInvulnerable(){
 }
 
 void Armor::setName(string &name){
+	this->name = &name;
 }
 
 void Armor::setLevel(int level){
@@ -73,7 +64,7 @@ void Armor::setVal(float val){
 	this->val = val;
 }
 
-void Armor::setIsInvulnerable(const bool &flag){
-	if(&flag == &YES || &flag == &NO) isInvulnerable = &flag;
-	//should be some code here for exception
+void Armor::setIsInvulnerable(bool flag){
+	if(flag) isInvulnerable = &YES;
+	else isInvulnerable = &NO;
 }

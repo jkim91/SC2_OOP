@@ -5,12 +5,12 @@ RegenHealth::RegenHealth(){
 }
 
 RegenHealth::RegenHealth(RegenHealth &h) : Health(h){
-	r = new Regen(*h.getRegen()->getRate(), *h.getRegen()->getCooldown(), this);
+	r = new Regen(*h.getRegen()->getRate(), *h.getRegen()->getCooldown(), *this);
 
 }
 
 RegenHealth::RegenHealth(float &max_health, Armor* a, GameObject* g, float &rate, float &cooldown) : Health(max_health, a, g){
-	r = new Regen(rate, cooldown, this);
+	r = new Regen(rate, cooldown, *this);
 }
 
 RegenHealth::~RegenHealth(){

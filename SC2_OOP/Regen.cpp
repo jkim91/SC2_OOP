@@ -3,6 +3,7 @@
 #define NULL 0
 
 Regen::Regen(){
+	meter = NULL;
 }
 
 Regen::Regen(Regen &r){
@@ -15,17 +16,21 @@ Regen::Regen(Regen &r){
 Regen::Regen(float &rate, float &cooldown, Meter &m){
 	this->rate = &rate;
 	this->cooldown = &cooldown;
-	interrupt = false;
-	this->meter = &m;
-	execute();
+	interrupt = &FALSE;
+	setMeter(m);
 }
 
+Regen::~Regen(){
+	runExec = &FALSE;
+}
+
+//In reality, this algorithm needs to be modified in order to poll for interrupt and let other tasks run.
 void Regen::execute(){
-	while (true){
-		if(interrupt){
+	while (*runExec){
+		if(*interrupt){
 			int temp=0;
 			while(temp < *cooldown) temp++;
-			interrupt = false;
+			interrupt = &FALSE;
 		}
 		else if (meter->getCurrent() >= meter->getMaxValue()) meter->setCurrentToMax();
 		else meter->add(*rate);
@@ -33,7 +38,12 @@ void Regen::execute(){
 }
 
 void Regen::switchInterrupt(){
-	interrupt = 1-interrupt;
+	if(*interrupt) interrupt = &FALSE;
+	else interrupt = &TRUE;
+}
+
+void Regen::stopExecute(){
+	runExec = &FALSE;
 }
 
 float* Regen::getRate(){
@@ -56,6 +66,10 @@ bool Regen::getInterrupt(){
 	return interrupt;
 }
 
+bool Regen::getRunExec(){
+	return runExec;
+}
+
 Meter* Regen::getMeter(){
 	return meter;
 }
@@ -69,9 +83,17 @@ void Regen::setCooldown(float &f){
 }
 
 void Regen::setInterrupt(bool val){
-	interrupt = val;
+	if(val) interrupt = &TRUE;
+	else interrupt = &FALSE;
+}
+
+void Regen::setRunExec(bool val){
+	if(val) runExec = &TRUE;
+	else runExec = &FALSE;
 }
 
 void Regen::setMeter(Meter &m){
 	meter = &m;
+	runExec = &TRUE;
+	execute();
 }

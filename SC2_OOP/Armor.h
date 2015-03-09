@@ -6,16 +6,21 @@ Explanation:
 	An Armor object is an object that modifies one or several Meter objects. An Armor object is only created by a Player object and all of the GameObjects under Player use this object modify HP, if attacked.
 
 	State, Constants, Getters, and Setters:
-		-State
 			-name is a string pointer. It determines the name of the Armor object. It is a pointer because Armor objects in different Player objects may share the same name.
 			-level is a int. It is determined by the upgrades performed by the Player object.
 			-val is a float. It determines the damage offset suffered by the object.
 			-isInvulnerable is a const boolean pointer. It determines if the object referencing this Armor can be attacked or not. It can only reference YES or NO in the Armor class.
-		-Constants
 			-YES represents true for isInvulnerable.
 			-NO represents false for isInvulnerable.
-		-Getters and Setters
-			all of its state has getters and setters. However, name and invulnerable can return values, instead of the pointers.
+	
+	Methods and Functions
+		-nothing special in particular
+
+	Constructor and destructors
+		-default: points name to NULL, set level and val to 0, armor is not invulnerable
+		-string parameter: sets name. follow rest with default.
+		-string and float: sets name and value of armor. follow rest with default.
+
 */
 
 #include <string>
@@ -27,7 +32,6 @@ public:
 	Armor(); //default constructor
 	Armor(string &name); //constructor with name parameter
 	Armor(string &name, float val); //constructor with name and armor value parameter
-	Armor(string &name, bool &isInvulnerable); //constructor with name and isInvulnerable flag(should be true, to be honest)
 	Armor(Armor &a); //copy constructor
 
 	//getters
@@ -42,11 +46,11 @@ public:
 	void setName(string &name);
 	void setLevel(int level);
 	void setVal(float val);
-	void setIsInvulnerable(const bool &flag);
+	void setIsInvulnerable(bool flag);
 
 	//constant
-	static const bool YES; //flag for yes
-	static const bool NO; //flag for no
+	static const bool YES = true; //flag for yes
+	static const bool NO = false; //flag for no
 
 protected:
 	//state
