@@ -153,6 +153,9 @@
     <ClInclude Include="Transform.h">
       <Filter>Header Files\Interfaces</Filter>
     </ClInclude>
+    <ClInclude Include="Energy.h">
+      <Filter>Header Files\Meters</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
